@@ -670,6 +670,73 @@
     }
     .cta-note a { color: rgba(255,255,255,.8); text-underline-offset: 3px; text-decoration: underline; }
 
+    /* ─── FORM ─────────────────────────────────────────────────────── */
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+    .form-field { display: flex; flex-direction: column; gap: .4rem; }
+
+    .form-label {
+      font-size: .72rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.65);
+    }
+
+    .form-input {
+      font-family: var(--font-b);
+      font-size: .9375rem;
+      font-weight: 300;
+      color: var(--white);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 2px;
+      padding: .85rem 1.1rem;
+      outline: none;
+      transition: border-color .2s, background .2s;
+      width: 100%;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,.3); }
+    .form-input:focus {
+      border-color: rgba(255,255,255,.7);
+      background: rgba(255,255,255,.12);
+    }
+
+    .form-submit {
+      font-family: var(--font-b);
+      font-weight: 500;
+      font-size: .9375rem;
+      color: var(--blue);
+      background: var(--white);
+      border: none;
+      border-radius: 2px;
+      padding: .9rem 2.25rem;
+      cursor: pointer;
+      text-align: center;
+      transition: opacity .2s, transform .2s;
+      margin-top: .35rem;
+      width: 100%;
+    }
+    .form-submit:hover { opacity: .9; transform: translateY(-1px); }
+    .form-submit:active { transform: translateY(0); }
+    .form-submit:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+    .form-success {
+      display: none;
+      padding: 1.5rem;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 2px;
+      background: rgba(255,255,255,.08);
+      text-align: center;
+    }
+    .form-success.show { display: block; }
+    .form-success p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.85);
+      line-height: 1.5;
+    }
+    .form-success strong { color: var(--white); }
+
     /* ─── FOOTER ───────────────────────────────────────────────────── */
     footer {
       background: var(--black);
@@ -973,9 +1040,27 @@
         Da el primer paso. Una conversación de 30 minutos
         puede cambiar cómo trabaja tu empresa para siempre.
       </p>
-      <a href="mailto:hola@damiasolve.com" class="btn-white">Contactar ahora</a>
-      <p class="cta-note">
-        O escríbenos directamente a
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="form-field">
+          <label class="form-label" for="fname">Nombre</label>
+          <input class="form-input" type="text" id="fname" name="nombre"
+                 placeholder="Tu nombre" autocomplete="given-name" required />
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="femail">Email</label>
+          <input class="form-input" type="email" id="femail" name="email"
+                 placeholder="tu@email.com" autocomplete="email" required />
+        </div>
+        <button class="form-submit" type="submit">Solicitar consulta gratuita</button>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <p><strong>¡Recibido!</strong><br>Te contactaremos en menos de 24 horas.</p>
+      </div>
+
+      <p class="cta-note" style="margin-top:1.35rem">
+        O escríbenos a
         <a href="mailto:hola@damiasolve.com">hola@damiasolve.com</a>
       </p>
     </div>
@@ -1014,6 +1099,24 @@
     }, { threshold: 0.14 });
 
     document.querySelectorAll('.rv, .stat-cell').forEach(el => io.observe(el));
+
+    // contact form
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('.form-submit');
+      const nombre = this.nombre.value.trim();
+      const email  = this.email.value.trim();
+      if (!nombre || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        this.email.focus();
+        return;
+      }
+      btn.disabled = true;
+      btn.textContent = 'Enviando…';
+      setTimeout(() => {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+      }, 800);
+    });
   </script>
 </body>
 </html>
