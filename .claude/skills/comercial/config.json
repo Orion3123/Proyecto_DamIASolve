@@ -1,0 +1,146 @@
+{
+  "branding": {
+    "empresa": "DamIASolve",
+    "logo_url": "https://damiasolve.com/logo.png",
+    "web": "https://damiasolve.com",
+    "colores": {
+      "primario": "#2671AC",
+      "secundario": "#EEF6FF",
+      "acento": "#3095E3",
+      "texto": "#060606",
+      "fondo": "#FFFFFF"
+    },
+    "tipografia": "Inter, system-ui, -apple-system, sans-serif"
+  },
+
+  "firmante": {
+    "nombre": "Damián Rosales Navas",
+    "cargo": "Fundador de DamIASolve",
+    "email": "ia@damiasolve.com",
+    "telefono": "+34 633 044 489"
+  },
+
+  "fathom": {
+    "api_key": "",
+    "_comment": "Dejar vacio para usar modo manual. Obten tu API key en fathom.video/settings/api"
+  },
+
+  "output": {
+    "ruta_base": "./clientes"
+  },
+
+  "catalogo_servicios": [
+    {
+      "nombre": "Lite — Hazlo tú mismo",
+      "descripcion": "1 flujo básico de automatización + vídeo explicativo + checklist. Sin soporte mensual.",
+      "precio_base_desde": 250,
+      "modalidad": "pago único"
+    },
+    {
+      "nombre": "Básico — Funciona sin preocuparte",
+      "descripcion": "1-2 procesos simples automatizados, soporte básico y 1 sesión de formación.",
+      "precio_base_desde": 450,
+      "mensualidad": 89,
+      "modalidad": "fee inicial + mensualidad"
+    },
+    {
+      "nombre": "Profesional — Crece en piloto automático",
+      "descripcion": "Automatizaciones completas con informe mensual y optimización trimestral.",
+      "precio_base_desde": 590,
+      "mensualidad": 149,
+      "modalidad": "fee inicial + mensualidad"
+    },
+    {
+      "nombre": "Premium — Gestión Total",
+      "descripcion": "Servicio personalizado con plan estratégico trimestral y soporte prioritario.",
+      "precio_base_desde": null,
+      "mensualidad": 349,
+      "modalidad": "a medida + mensualidad"
+    },
+    {
+      "nombre": "RRSS Mini",
+      "descripcion": "Automatización básica de publicaciones en redes sociales.",
+      "precio_base_desde": 129,
+      "modalidad": "pago único"
+    },
+    {
+      "nombre": "RRSS Estándar",
+      "descripcion": "Flujo completo de publicaciones y organización de contenidos.",
+      "precio_base_desde": 199,
+      "modalidad": "pago único"
+    },
+    {
+      "nombre": "RRSS Completa",
+      "descripcion": "Sistema avanzado y personalizado de publicación en redes.",
+      "precio_base_desde": 299,
+      "precio_hasta": 399,
+      "modalidad": "pago único"
+    },
+    {
+      "nombre": "RRSS Multicanal",
+      "descripcion": "Automatización de publicaciones en múltiples plataformas.",
+      "precio_base_desde": null,
+      "precio_hasta": 499,
+      "modalidad": "pago único"
+    },
+    {
+      "nombre": "Mantenimiento Esencial",
+      "descripcion": "Revisión básica y soporte mínimo mensual.",
+      "mensualidad": 19,
+      "modalidad": "mensualidad"
+    },
+    {
+      "nombre": "Mantenimiento Avanzado",
+      "descripcion": "Seguimiento completo, pequeños ajustes y soporte superior.",
+      "mensualidad": 39,
+      "modalidad": "mensualidad"
+    },
+    {
+      "nombre": "Mantenimiento Completo",
+      "descripcion": "Acompañamiento amplio con revisión continua.",
+      "mensualidad": 59,
+      "modalidad": "mensualidad"
+    },
+    {
+      "nombre": "Diagnóstico Automatizado de Negocio",
+      "descripcion": "Análisis inicial para detectar procesos repetitivos y oportunidades de automatización.",
+      "precio_base_desde": 0,
+      "modalidad": "a definir / descontable si contratan"
+    },
+    {
+      "nombre": "Horas fuera de plan",
+      "descripcion": "Ajustes, cambios o ampliaciones no incluidos en el plan contratado.",
+      "precio_hora": 35,
+      "modalidad": "por horas"
+    }
+  ],
+
+  "condiciones_pago_sugerencias": [
+    "50% al firmar + 50% a la entrega",
+    "100% pago único al inicio",
+    "Fee inicial al firmar + mensualidad desde el primer mes"
+  ],
+
+  "condiciones_generales": [
+    "Planes mensuales sin permanencia: el cliente puede cambiar, pausar o cancelar cuando quiera.",
+    "Activación en menos de 24 horas hábiles tras la confirmación del pago.",
+    "Si las automatizaciones están en la cuenta del cliente, siguen funcionando aunque cancele el soporte.",
+    "Si están montadas en cuentas de DamIASolve, se pausan al cancelar (se puede valorar migración).",
+    "Métodos de pago: transferencia SEPA, Bizum, PayPal o Stripe (estos últimos pueden tener comisión)."
+  ],
+
+  "moneda_default": "EUR",
+  "iva_porcentaje": 21,
+
+  "validez_oferta_dias": 30,
+
+  "items_fuera_de_alcance_sugeridos": [
+    "Mantenimiento posterior a la entrega (se cotiza aparte o via plan mensual)",
+    "Formación más allá de la sesión incluida en el plan",
+    "Costes de herramientas, licencias y APIs de terceros (a cargo del cliente)",
+    "Cambios de alcance posteriores a la firma (se cotizan a 35 €/h)",
+    "Integraciones con sistemas no mencionados en este alcance",
+    "Gestión y creación de contenido (solo automatización del flujo)",
+    "Acceso a cuentas o plataformas que el cliente no facilite en los plazos acordados"
+  ]
+}

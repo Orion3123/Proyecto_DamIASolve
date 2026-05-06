@@ -1,0 +1,62 @@
+{
+  "_comment": "Copia este archivo a config.json y rellena tus datos. La skill lee config.json, no el .example.",
+
+  "branding": {
+    "empresa": "Tu Empresa S.L.",
+    "logo_url": "https://tudominio.com/logo.png",
+    "web": "https://tudominio.com",
+    "colores": {
+      "primario": "#1e3a8a",
+      "secundario": "#f5f1e8",
+      "acento": "#0f766e",
+      "texto": "#1f2937",
+      "fondo": "#ffffff"
+    },
+    "tipografia": "Inter, system-ui, -apple-system, sans-serif"
+  },
+
+  "firmante": {
+    "nombre": "Nombre Apellido",
+    "cargo": "Fundador & Consultor",
+    "email": "tu@email.com",
+    "telefono": "+34 600 000 000"
+  },
+
+  "fathom": {
+    "api_key": "",
+    "_comment": "Dejar vacio para usar modo manual (pegar transcripcion). Obten la API key en fathom.video/settings/api"
+  },
+
+  "output": {
+    "ruta_base": "./clientes",
+    "_comment": "Ruta relativa al directorio actual o absoluta. Se crea si no existe."
+  },
+
+  "catalogo_servicios": [
+    {
+      "nombre": "Ejemplo: Consultoria estrategica de IA",
+      "descripcion": "Auditoria de procesos + roadmap de implementacion a 90 dias",
+      "precio_base_desde": 2500,
+      "_comment": "Opcional. Rellena 5-10 servicios tipicos para que la skill use como piezas en el alcance."
+    }
+  ],
+
+  "condiciones_pago_sugerencias": [
+    "50% al firmar + 50% a la entrega",
+    "30% firma + 30% entregable intermedio + 40% final",
+    "Mensual a 30 dias fecha factura"
+  ],
+
+  "moneda_default": "EUR",
+  "iva_porcentaje": 21,
+
+  "validez_oferta_dias": 30,
+
+  "items_fuera_de_alcance_sugeridos": [
+    "Mantenimiento posterior a la entrega",
+    "Formacion a usuarios finales mas alla de la sesion incluida",
+    "Hosting, licencias y APIs de terceros (a cargo del cliente)",
+    "Cambios de alcance posteriores a la firma (se cotizan aparte)",
+    "Integraciones con sistemas no mencionados en este alcance"
+  ]
+}
