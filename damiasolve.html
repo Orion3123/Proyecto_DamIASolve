@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ===== SEO PRINCIPAL ===== -->
+  <title>DamIASolve | Automatización e IA para Micropymes y Autónomos en España</title>
+  <meta name="description" content="Consultoría de automatización e inteligencia artificial para micropymes, autónomos y pequeños negocios. Ahorra tiempo, reduce errores y digitaliza tu negocio con soluciones prácticas y asequibles. La Línea, Campo de Gibraltar, Cádiz." />
+  <meta name="keywords" content="automatización micropymes, inteligencia artificial pequeños negocios, consultoría automatización procesos, IA autónomos España, Make.com Power Automate, WhatsApp Business automatización, digitalizar negocio, optimización procesos pymes, automatización Campo de Gibraltar, Damián Rosales DamIASolve" />
+  <meta name="author" content="Damián Rosales Navas – DamIASolve" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://www.damiasolve.com/" />
+
+  <!-- ===== OPEN GRAPH / FACEBOOK ===== -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.damiasolve.com/" />
+  <meta property="og:title" content="DamIASolve | Automatización e IA para Micropymes" />
+  <meta property="og:description" content="Consultoría de automatización e inteligencia artificial para autónomos, micropymes y pequeños negocios. Ahorra tiempo y digitaliza tu negocio." />
+  <meta property="og:image" content="https://www.damiasolve.com/Logo_DamIASolve111.png" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:site_name" content="DamIASolve" />
+
+  <!-- ===== TWITTER CARD ===== -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DamIASolve | Automatización e IA para Micropymes" />
+  <meta name="twitter:description" content="Consultoría de automatización e inteligencia artificial para autónomos, micropymes y pequeños negocios." />
+  <meta name="twitter:image" content="https://www.damiasolve.com/Logo_DamIASolve111.png" />
+
+  <!-- ===== SCHEMA.ORG JSON-LD ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "DamIASolve",
+    "description": "Consultoría de automatización, optimización de procesos e inteligencia artificial para micropymes, autónomos y pequeños negocios.",
+    "url": "https://www.damiasolve.com",
+    "logo": "https://www.damiasolve.com/Logo_DamIASolve111.png",
+    "telephone": "+34633044489",
+    "email": "ia@damiasolve.com",
+    "founder": {
+      "@type": "Person",
+      "name": "Damián Rosales Navas",
+      "jobTitle": "Consultor de Automatización e IA"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "La Línea de la Concepción",
+      "addressRegion": "Cádiz",
+      "addressCountry": "ES"
+    },
+    "areaServed": "España",
+    "sameAs": [
+      "https://www.instagram.com/damiasolve",
+      "https://www.facebook.com/share/1CnYanoxBP/",
+      "https://www.linkedin.com/in/damianrosalesnavas"
+    ],
+    "priceRange": "€€",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de automatización e IA",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Diagnóstico de procesos", "description": "Análisis de procesos para detectar tareas repetitivas y oportunidades de automatización"}, "price": "90", "priceCurrency": "EUR"},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Automatización WhatsApp Business"}, "price": "129", "priceCurrency": "EUR"},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Asistentes de IA para negocios"}, "price": "450", "priceCurrency": "EUR"}
+      ]
+    }
+  }
+  </script>
+
+  <!-- ===== FUENTES ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- ===== ICONOS ===== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* =============================================
+       VARIABLES Y RESET
+    ============================================= */
+    :root {
+      --blue:       #2176ac;
+      --blue-dk:    #1a5f8a;
+      --blue-lt:    #2d8fd4;
+      --blue-glow:  rgba(33,118,172,.35);
+      --black:      #060606;
+      --dark:       #0e0e0e;
+      --dark2:      #181818;
+      --dark3:      #222;
+      --gray:       #444;
+      --gray-lt:    #777;
+      --border:     #e5e5e5;
+      --white:      #ffffff;
+      --offwhite:   #f7f9fb;
+      --font:       'Inter', sans-serif;
+      --r:          12px;
+      --r-sm:       8px;
+      --shadow:     0 4px 24px rgba(0,0,0,.07);
+      --shadow-lg:  0 16px 48px rgba(0,0,0,.12);
+      --t:          .28s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font); color: var(--black); background: var(--white); line-height: 1.6; overflow-x: hidden; }
+    img  { max-width: 100%; height: auto; display: block; }
+    a    { text-decoration: none; color: inherit; }
+    ul   { list-style: none; }
+    button { font-family: var(--font); cursor: pointer; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .sec       { padding: 96px 0; }
+    .sec-sm    { padding: 64px 0; }
+    .tc        { text-align: center; }
+    .tc .sec-sub { margin: 0 auto; }
+
+    /* Labels / Titles */
+    .sec-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--blue); margin-bottom: 12px;
+      display: block;
+    }
+    .sec-title {
+      font-size: clamp(28px, 4vw, 46px); font-weight: 800;
+      line-height: 1.12; margin-bottom: 16px; letter-spacing: -.5px;
+    }
+    .sec-sub {
+      font-size: 18px; color: var(--gray-lt); max-width: 620px; line-height: 1.75;
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; border-radius: var(--r-sm);
+      font-weight: 600; font-size: 15px;
+      transition: var(--t); border: 2px solid transparent;
+    }
+    .btn-pri { background: var(--blue); color: var(--white); }
+    .btn-pri:hover {
+      background: var(--blue-dk); transform: translateY(-2px);
+      box-shadow: 0 8px 28px var(--blue-glow);
+    }
+    .btn-ghost { background: transparent; border-color: rgba(255,255,255,.55); color: var(--white); }
+    .btn-ghost:hover { background: var(--white); color: var(--blue); border-color: var(--white); }
+    .btn-outline { background: transparent; border-color: var(--blue); color: var(--blue); }
+    .btn-outline:hover { background: var(--blue); color: var(--white); }
+    .btn-white { background: var(--white); color: var(--blue); border-color: var(--white); }
+    .btn-white:hover { background: transparent; color: var(--white); }
+    .btn-lg { padding: 17px 36px; font-size: 16px; }
+
+    /* =============================================
+       HEADER / NAV
+    ============================================= */
+    .hdr {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(6,6,6,.96); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      transition: box-shadow var(--t);
+    }
+    .hdr.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,.5); }
+
+    .nav {
+      display: flex; align-items: center;
+      justify-content: space-between; height: 70px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 20px; font-weight: 800; color: var(--white);
+      letter-spacing: -.3px;
+    }
+    .logo img { height: 36px; width: auto; }
+    .logo-text span { color: var(--blue); }
+
+    .nav-links {
+      display: flex; align-items: center; gap: 28px;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.75); font-size: 14px; font-weight: 500;
+      transition: color var(--t);
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 6px; background: none; border: none;
+    }
+    .hamburger span {
+      width: 22px; height: 2px; background: var(--white);
+      border-radius: 2px; transition: var(--t); display: block;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mob-menu {
+      display: none; position: fixed; top: 70px;
+      left: 0; right: 0; background: var(--dark2);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: 24px; z-index: 999;
+    }
+    .mob-menu.open { display: block; }
+    .mob-menu a {
+      display: block; padding: 13px 0;
+      color: rgba(255,255,255,.75); font-size: 16px; font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: var(--t);
+    }
+    .mob-menu a:hover { color: var(--white); padding-left: 6px; }
+    .mob-menu .btn { margin-top: 20px; width: 100%; justify-content: center; }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      min-height: 100vh; background: var(--dark);
+      display: flex; align-items: center;
+      padding-top: 70px; position: relative; overflow: hidden;
+    }
+    .hero-glow-a {
+      position: absolute; top: -30%; right: -15%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(33,118,172,.14) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-glow-b {
+      position: absolute; bottom: -20%; left: -10%;
+      width: 550px; height: 550px;
+      background: radial-gradient(circle, rgba(33,118,172,.08) 0%, transparent 68%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center; position: relative; z-index: 1;
+      padding: 80px 0;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(33,118,172,.14);
+      border: 1px solid rgba(33,118,172,.3);
+      color: #5bb5e0; padding: 6px 14px; border-radius: 100px;
+      font-size: 13px; font-weight: 600; margin-bottom: 24px;
+    }
+    .hero-h1 {
+      font-size: clamp(36px, 5vw, 62px); font-weight: 900;
+      line-height: 1.07; color: var(--white);
+      margin-bottom: 24px; letter-spacing: -1.5px;
+    }
+    .hero-h1 span { color: var(--blue); }
+    .hero-p {
+      font-size: 18px; color: rgba(255,255,255,.62);
+      line-height: 1.75; margin-bottom: 40px; max-width: 520px;
+    }
+    .hero-p strong { color: rgba(255,255,255,.9); }
+    .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex; gap: 32px; margin-top: 52px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      flex-wrap: wrap;
+    }
+    .hero-stat-num {
+      font-size: 30px; font-weight: 800; color: var(--white);
+    }
+    .hero-stat-num span { color: var(--blue); }
+    .hero-stat-lbl { font-size: 12px; color: rgba(255,255,255,.45); margin-top: 3px; }
+
+    /* Hero visual card side */
+    .hero-visual { position: relative; }
+    .hero-img-box {
+      border-radius: 22px; overflow: hidden;
+      background: linear-gradient(140deg,#1a2d3f 0%,#0d1e2c 50%,#060e17 100%);
+      height: 520px; display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    /* Replace with: <img src="tu-foto.jpg" alt="Damián Rosales – DamIASolve" ...> */
+    .hero-img-box img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-img-box .ph-icon {
+      font-size: 90px; color: rgba(33,118,172,.25); position: relative; z-index: 1;
+    }
+    .hero-img-box::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 35% 55%, rgba(33,118,172,.18) 0%, transparent 55%);
+    }
+    .hero-chip {
+      position: absolute; bottom: -18px; left: -18px;
+      background: var(--blue); color: var(--white);
+      padding: 18px 22px; border-radius: var(--r);
+      box-shadow: 0 12px 36px var(--blue-glow);
+    }
+    .hero-chip-n { font-size: 28px; font-weight: 800; }
+    .hero-chip-l { font-size: 11px; opacity: .85; margin-top: 2px; }
+    .hero-chip2 {
+      position: absolute; top: 28px; right: -14px;
+      background: rgba(24,24,24,.96); border: 1px solid rgba(255,255,255,.1);
+      color: var(--white); padding: 14px 18px; border-radius: var(--r);
+      box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 12px;
+    }
+    .hero-chip2 i { font-size: 22px; color: var(--blue); }
+    .hero-chip2-t { font-size: 13px; font-weight: 700; }
+    .hero-chip2-s { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 2px; }
+
+    /* =============================================
+       TRUST STRIP
+    ============================================= */
+    .trust {
+      background: var(--dark2);
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding: 22px 0;
+    }
+    .trust-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 36px; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 9px;
+      color: rgba(255,255,255,.55); font-size: 14px; font-weight: 500;
+    }
+    .trust-item i { color: var(--blue); font-size: 16px; }
+
+    /* =============================================
+       ABOUT
+    ============================================= */
+    .about { background: var(--offwhite); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-img-wrap { position: relative; }
+    .about-img-box {
+      border-radius: 20px; overflow: hidden;
+      background: linear-gradient(135deg, #e4eff8, #c8dff0);
+      height: 500px; display: flex; align-items: center; justify-content: center;
+    }
+    /* Replace with: <img src="foto-damian.jpg" alt="Damián Rosales Navas – Consultor IA"> */
+    .about-img-box img { width: 100%; height: 100%; object-fit: cover; }
+    .about-img-box .ph-icon { font-size: 80px; color: rgba(33,118,172,.28); }
+    .about-float {
+      position: absolute; bottom: -16px; right: -16px;
+      background: var(--blue); color: var(--white);
+      padding: 18px 22px; border-radius: var(--r);
+      text-align: center; box-shadow: 0 12px 32px var(--blue-glow);
+    }
+    .about-float-n { font-size: 34px; font-weight: 800; display: block; }
+    .about-float-l { font-size: 11px; opacity: .85; }
+
+    .about-text { font-size: 16px; color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+    .about-text strong { color: var(--black); }
+
+    .principles {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 12px; margin: 28px 0;
+    }
+    .principle {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 14px 16px; background: var(--white);
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+    }
+    .principle i { color: var(--blue); font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+    .principle span { font-size: 13px; font-weight: 600; }
+
+    .resp-badges { display: flex; gap: 12px; margin-top: 28px; flex-wrap: wrap; }
+    .resp-badge {
+      text-align: center; padding: 18px 22px;
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: var(--r);
+    }
+    .resp-badge .t { font-size: 22px; font-weight: 800; color: var(--blue); }
+    .resp-badge .l { font-size: 11px; color: var(--gray-lt); margin-top: 3px; }
+
+    /* =============================================
+       SERVICES OVERVIEW
+    ============================================= */
+    .services { background: var(--white); }
+    .srv-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px; margin-top: 60px;
+    }
+    .srv-card {
+      padding: 30px; border: 1px solid var(--border); border-radius: var(--r);
+      position: relative; overflow: hidden; transition: var(--t);
+    }
+    .srv-card::after {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px; background: var(--blue);
+      transform: scaleX(0); transform-origin: left; transition: var(--t);
+    }
+    .srv-card:hover { box-shadow: var(--shadow-lg); border-color: rgba(33,118,172,.2); transform: translateY(-4px); }
+    .srv-card:hover::after { transform: scaleX(1); }
+    .srv-ico {
+      width: 52px; height: 52px; background: rgba(33,118,172,.08);
+      border-radius: 11px; display: flex; align-items: center;
+      justify-content: center; margin-bottom: 18px;
+    }
+    .srv-ico i { font-size: 22px; color: var(--blue); }
+    .srv-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+    .srv-desc  { font-size: 14px; color: var(--gray-lt); line-height: 1.7; margin-bottom: 14px; }
+    .srv-price { font-size: 14px; font-weight: 700; color: var(--blue); }
+
+    /* =============================================
+       PRICING
+    ============================================= */
+    .pricing { background: var(--offwhite); }
+    .plans-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 22px; margin-top: 60px;
+    }
+    .plan {
+      background: var(--white); border: 2px solid var(--border);
+      border-radius: var(--r); padding: 30px 22px;
+      position: relative; transition: var(--t);
+    }
+    .plan:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .plan.hot { border-color: var(--blue); box-shadow: 0 0 0 4px rgba(33,118,172,.08); }
+    .plan-badge {
+      position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+      background: var(--blue); color: var(--white);
+      font-size: 11px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 4px 16px; border-radius: 100px;
+      white-space: nowrap;
+    }
+    .plan-name  { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .plan-title { font-size: 19px; font-weight: 800; margin-bottom: 3px; }
+    .plan-tag   { font-size: 12px; color: var(--gray-lt); font-style: italic; margin-bottom: 22px; }
+    .plan-price { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
+    .plan-price .amt { font-size: 34px; font-weight: 800; }
+    .plan-price .per { font-size: 14px; color: var(--gray-lt); }
+    .plan-price .plus { font-size: 13px; color: var(--gray-lt); margin-top: 4px; }
+    .plan-feats { display: flex; flex-direction: column; gap: 9px; margin-bottom: 26px; }
+    .plan-feat  { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--gray); }
+    .plan-feat i { color: var(--blue); font-size: 11px; margin-top: 3px; flex-shrink: 0; }
+    .plan-cta   { display: block; text-align: center; }
+
+    /* Mantenimiento */
+    .maint-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 22px; margin-top: 48px;
+    }
+    .maint-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 28px 24px;
+      display: flex; flex-direction: column; gap: 8px;
+      transition: var(--t);
+    }
+    .maint-card:hover { box-shadow: var(--shadow); border-color: rgba(33,118,172,.2); }
+    .maint-name  { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--blue); }
+    .maint-title { font-size: 18px; font-weight: 700; }
+    .maint-desc  { font-size: 14px; color: var(--gray-lt); line-height: 1.6; }
+    .maint-price { font-size: 28px; font-weight: 800; color: var(--black); margin-top: 6px; }
+    .maint-price span { font-size: 14px; font-weight: 400; color: var(--gray-lt); }
+
+    /* Nota condiciones */
+    .pricing-note {
+      margin-top: 36px; text-align: center;
+      font-size: 13px; color: var(--gray-lt); line-height: 1.7;
+    }
+    .pricing-note i { color: var(--blue); }
+
+    /* =============================================
+       PROCESS
+    ============================================= */
+    .process { background: var(--dark); color: var(--white); }
+    .process .sec-title { color: var(--white); }
+    .process .sec-sub   { color: rgba(255,255,255,.55); }
+    .steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 36px; margin-top: 60px;
+    }
+    .step-num  { font-size: 64px; font-weight: 900; color: rgba(33,118,172,.12); line-height: 1; margin-bottom: 14px; }
+    .step-ico  {
+      width: 50px; height: 50px;
+      background: rgba(33,118,172,.14); border: 1px solid rgba(33,118,172,.28);
+      border-radius: 11px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+    .step-ico i { font-size: 20px; color: var(--blue); }
+    .step-t    { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .step-d    { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.7; }
+
+    /* =============================================
+       ACCORDION (CATÁLOGO)
+    ============================================= */
+    .catalog { background: var(--white); }
+    .accordion { margin-top: 48px; }
+    .acc-item  { border: 1px solid var(--border); border-radius: var(--r-sm); margin-bottom: 7px; overflow: hidden; }
+    .acc-hdr   {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 22px; cursor: pointer; background: var(--white);
+      transition: background var(--t); user-select: none;
+    }
+    .acc-hdr:hover           { background: var(--offwhite); }
+    .acc-hdr.active          { background: rgba(33,118,172,.04); }
+    .acc-left { display: flex; align-items: center; gap: 14px; }
+    .acc-ico  {
+      width: 38px; height: 38px; background: rgba(33,118,172,.08);
+      border-radius: 8px; display: flex; align-items: center;
+      justify-content: center; flex-shrink: 0;
+    }
+    .acc-ico i { color: var(--blue); font-size: 15px; }
+    .acc-name  { font-size: 15px; font-weight: 700; }
+    .acc-p     { font-size: 13px; color: var(--blue); font-weight: 600; margin-top: 2px; }
+    .acc-arr   { color: var(--gray-lt); transition: transform var(--t); font-size: 13px; }
+    .acc-hdr.active .acc-arr { transform: rotate(180deg); color: var(--blue); }
+
+    .acc-body  { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+    .acc-body.open { max-height: 700px; }
+    .acc-cnt   { padding: 0 22px 22px 74px; }
+    .acc-cnt p { font-size: 15px; color: var(--gray); line-height: 1.75; margin-bottom: 14px; }
+    .acc-list  { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+    .acc-li    { display: flex; align-items: flex-start; gap: 7px; font-size: 13px; color: var(--gray); }
+    .acc-li i  { color: var(--blue); font-size: 11px; margin-top: 3px; flex-shrink: 0; }
+
+    /* =============================================
+       CTA BANNER
+    ============================================= */
+    .cta-band {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dk) 100%);
+      padding: 96px 0;
+    }
+    .cta-band .sec-title { color: var(--white); }
+    .cta-sub  { font-size: 18px; color: rgba(255,255,255,.82); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* =============================================
+       CONTACTO
+    ============================================= */
+    .contact { background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
+    .contact-aside { position: sticky; top: 90px; }
+    .c-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      margin-bottom: 20px; padding: 18px;
+      background: var(--offwhite); border-radius: var(--r);
+    }
+    .c-ico {
+      width: 44px; height: 44px; background: rgba(33,118,172,.1);
+      border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .c-ico i { font-size: 18px; color: var(--blue); }
+    .c-lbl { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-lt); margin-bottom: 3px; }
+    .c-val { font-size: 15px; font-weight: 600; color: var(--black); }
+    .c-val a { color: var(--blue); transition: color var(--t); }
+    .c-val a:hover { color: var(--blue-dk); }
+
+    .socials { display: flex; gap: 10px; margin-top: 24px; }
+    .soc-a {
+      width: 42px; height: 42px; background: var(--offwhite);
+      border: 1px solid var(--border); border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px; color: var(--gray); transition: var(--t);
+    }
+    .soc-a:hover { background: var(--blue); border-color: var(--blue); color: var(--white); transform: translateY(-2px); }
+
+    /* Form */
+    .contact-form {
+      background: var(--offwhite); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 40px;
+    }
+    .form-t  { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .form-st { font-size: 14px; color: var(--gray-lt); margin-bottom: 30px; }
+    .fg      { margin-bottom: 18px; }
+    .fg label { display: block; font-size: 13px; font-weight: 600; color: var(--gray); margin-bottom: 5px; }
+    .fg input, .fg select, .fg textarea {
+      width: 100%; padding: 12px 15px;
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+      font-family: var(--font); font-size: 15px;
+      color: var(--black); background: var(--white);
+      transition: var(--t); outline: none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus {
+      border-color: var(--blue); box-shadow: 0 0 0 3px rgba(33,118,172,.1);
+    }
+    .fg textarea { min-height: 120px; resize: vertical; }
+    .fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-submit { width: 100%; justify-content: center; font-size: 16px; padding: 15px; }
+    .form-priv { font-size: 12px; color: var(--gray-lt); text-align: center; margin-top: 10px; }
+    #form-ok { display: none; text-align: center; padding: 32px; }
+    #form-ok i { font-size: 48px; color: var(--blue); margin-bottom: 14px; display: block; }
+    #form-ok h4 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    #form-ok p { color: var(--gray-lt); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer { background: var(--dark); color: var(--white); padding: 72px 0 0; }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px; margin-bottom: 48px;
+    }
+    .footer-brand .logo { margin-bottom: 14px; }
+    .footer-desc { font-size: 14px; color: rgba(255,255,255,.45); line-height: 1.7; margin-bottom: 22px; }
+    .footer-soc  { display: flex; gap: 10px; }
+    .footer-soc a {
+      width: 34px; height: 34px; background: rgba(255,255,255,.06);
+      border-radius: 7px; display: flex; align-items: center;
+      justify-content: center; color: rgba(255,255,255,.55);
+      font-size: 14px; transition: var(--t);
+    }
+    .footer-soc a:hover { background: var(--blue); color: var(--white); }
+    .f-col-t { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 18px; }
+    .f-links { display: flex; flex-direction: column; gap: 11px; }
+    .f-links a { font-size: 14px; color: rgba(255,255,255,.55); transition: var(--t); }
+    .f-links a:hover { color: var(--white); padding-left: 4px; }
+    .f-c-item { display: flex; align-items: center; gap: 9px; font-size: 14px; color: rgba(255,255,255,.55); margin-bottom: 11px; }
+    .f-c-item i { color: var(--blue); width: 15px; font-size: 13px; }
+    .f-c-item a { color: rgba(255,255,255,.55); transition: color var(--t); }
+    .f-c-item a:hover { color: var(--white); }
+    .footer-bot {
+      border-top: 1px solid rgba(255,255,255,.07); padding: 22px 0;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bot p { font-size: 13px; color: rgba(255,255,255,.35); }
+
+    /* =============================================
+       WHATSAPP FLOAT
+    ============================================= */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 900;
+      width: 58px; height: 58px; background: #25d366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); font-size: 26px;
+      box-shadow: 0 8px 24px rgba(37,211,102,.4); transition: var(--t);
+    }
+    .wa-float:hover { background: #1da851; transform: scale(1.1); }
+    .wa-pulse {
+      position: absolute; width: 100%; height: 100%; border-radius: 50%;
+      background: rgba(37,211,102,.35);
+      animation: pulse 2.2s ease-out infinite;
+    }
+    @keyframes pulse {
+      0%   { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.65); opacity: 0; }
+    }
+
+    /* =============================================
+       SCROLL REVEAL
+    ============================================= */
+    .sr {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .sr.vis { opacity: 1; transform: translateY(0); }
+    .sr-d1 { transition-delay: .1s; }
+    .sr-d2 { transition-delay: .2s; }
+    .sr-d3 { transition-delay: .3s; }
+    .sr-d4 { transition-delay: .4s; }
+    .sr-d5 { transition-delay: .5s; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .nav-links, .nav .btn { display: none; }
+      .hamburger { display: flex; }
+      .hero-inner { grid-template-columns: 1fr; padding: 60px 0; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-img-wrap { max-width: 460px; }
+      .srv-grid  { grid-template-columns: repeat(2, 1fr); }
+      .plans-grid { grid-template-columns: repeat(2, 1fr); }
+      .maint-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-aside { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 768px) {
+      .sec { padding: 64px 0; }
+      .srv-grid   { grid-template-columns: 1fr; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .maint-grid { grid-template-columns: 1fr; }
+      .steps      { grid-template-columns: 1fr; }
+      .hero-cta   { flex-direction: column; }
+      .hero-stats { gap: 20px; }
+      .principles { grid-template-columns: 1fr; }
+      .acc-cnt    { padding: 0 14px 20px; }
+      .acc-list   { grid-template-columns: 1fr; }
+      .contact-form { padding: 24px 20px; }
+      .fg-row     { grid-template-columns: 1fr; }
+      .cta-btns   { flex-direction: column; align-items: center; }
+      .footer-grid{ grid-template-columns: 1fr; }
+      .footer-bot { flex-direction: column; text-align: center; }
+      .trust-row  { gap: 16px; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .resp-badges { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== WHATSAPP FLOTANTE ===== -->
+<a href="https://wa.me/34633044489" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <span class="wa-pulse"></span>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ===== HEADER ===== -->
+<header class="hdr" id="hdr">
+  <div class="container">
+    <nav class="nav">
+      <a href="#inicio" class="logo" aria-label="DamIASolve – Inicio">
+        <img src="public/Logo_DamIASolve111.png" alt="Logo DamIASolve" />
+        <span class="logo-text">Dam<span>IA</span>Solve</span>
+      </a>
+      <ul class="nav-links" role="navigation" aria-label="Navegación principal">
+        <li><a href="#sobre-mi">Quién soy</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#planes">Planes</a></li>
+        <li><a href="#como-trabajo">Cómo trabajo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <a href="#contacto" class="btn btn-pri" style="display:none;" id="nav-cta">Reserva diagnóstico</a>
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== MENÚ MÓVIL ===== -->
+<nav class="mob-menu" id="mob-menu" aria-label="Menú móvil">
+  <a href="#sobre-mi"   class="nav-mob-link">Quién soy</a>
+  <a href="#servicios"  class="nav-mob-link">Servicios</a>
+  <a href="#planes"     class="nav-mob-link">Planes</a>
+  <a href="#como-trabajo" class="nav-mob-link">Cómo trabajo</a>
+  <a href="#contacto"   class="nav-mob-link">Contacto</a>
+  <a href="#contacto" class="btn btn-pri">Reserva tu diagnóstico</a>
+</nav>
+
+<!-- ===== HERO ===== -->
+<main>
+<section class="hero" id="inicio" aria-label="Sección principal">
+  <div class="hero-glow-a" aria-hidden="true"></div>
+  <div class="hero-glow-b" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-inner">
+      <!-- Texto -->
+      <div>
+        <div class="hero-badge sr">
+          <i class="fas fa-microchip" aria-hidden="true"></i>
+          IA práctica para tu negocio
+        </div>
+        <h1 class="hero-h1 sr sr-d1">
+          Optimiza tu tiempo con <span>DamIASolve</span>
+        </h1>
+        <p class="hero-p sr sr-d2">
+          Consultoría de <strong>inteligencia artificial y automatización de procesos</strong> para autónomos, micropymes y comercios locales. Ahorra horas, reduce errores y digitaliza tu negocio sin complicaciones.
+        </p>
+        <div class="hero-cta sr sr-d3">
+          <a href="#contacto" class="btn btn-pri btn-lg">
+            <i class="fas fa-calendar-check" aria-hidden="true"></i>
+            Reserva tu diagnóstico
+          </a>
+          <a href="#servicios" class="btn btn-ghost btn-lg">
+            Ver servicios
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="hero-stats sr sr-d4" aria-label="Estadísticas clave">
+          <div>
+            <div class="hero-stat-num"><span>&lt;</span>24h</div>
+            <div class="hero-stat-lbl">Tiempo de respuesta</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">48h</div>
+            <div class="hero-stat-lbl">Propuesta lista</div>
+          </div>
+          <div>
+            <div class="hero-stat-num"><span>15</span>+</div>
+            <div class="hero-stat-lbl">Servicios disponibles</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">0€</div>
+            <div class="hero-stat-lbl">Sin permanencia</div>
+          </div>
+        </div>
+      </div>
+      <!-- Visual -->
+      <div class="hero-visual sr sr-d2" aria-hidden="true">
+        <div class="hero-img-box">
+          <!--
+            IMAGEN HERO: reemplaza este bloque por:
+            <img src="tu-foto-hero.jpg" alt="Damián Rosales – Consultor IA y automatización">
+          -->
+          <i class="fas fa-user-tie ph-icon"></i>
+        </div>
+        <div class="hero-chip">
+          <div class="hero-chip-n">90€</div>
+          <div class="hero-chip-l">Diagnóstico Express</div>
+        </div>
+        <div class="hero-chip2">
+          <i class="fas fa-bolt" aria-hidden="true"></i>
+          <div>
+            <div class="hero-chip2-t">Automatización lista</div>
+            <div class="hero-chip2-s">en menos de 48 h</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<div class="trust" aria-label="Herramientas que utilizamos">
+  <div class="container">
+    <div class="trust-row">
+      <div class="trust-item"><i class="fas fa-cogs" aria-hidden="true"></i> Make.com</div>
+      <div class="trust-item"><i class="fab fa-microsoft" aria-hidden="true"></i> Power Automate</div>
+      <div class="trust-item"><i class="fab fa-google" aria-hidden="true"></i> Google Workspace</div>
+      <div class="trust-item"><i class="fab fa-microsoft" aria-hidden="true"></i> Microsoft 365</div>
+      <div class="trust-item"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp Business</div>
+      <div class="trust-item"><i class="fas fa-brain" aria-hidden="true"></i> ChatGPT &amp; IA</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SOBRE MÍ ===== -->
+<section class="sec about" id="sobre-mi" aria-label="Sobre DamIASolve">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Imagen -->
+      <div class="about-img-wrap sr">
+        <div class="about-img-box">
+          <!--
+            FOTO DAMIÁN: reemplaza este bloque por:
+            <img src="foto-damian.jpg" alt="Damián Rosales Navas – Fundador DamIASolve">
+          -->
+          <i class="fas fa-user-circle ph-icon" aria-hidden="true"></i>
+        </div>
+        <div class="about-float" aria-hidden="true">
+          <span class="about-float-n">100%</span>
+          <span class="about-float-l">Soluciones a medida</span>
+        </div>
+      </div>
+      <!-- Contenido -->
+      <div>
+        <span class="sec-label sr">Quién está detrás</span>
+        <h2 class="sec-title sr sr-d1">Conoce a <span style="color:var(--blue)">DamIASolve</span></h2>
+        <p class="about-text sr sr-d2">
+          Soy <strong>Damián Rosales Navas</strong>, fundador de DamIASolve y especialista en optimización de procesos, automatización e inteligencia artificial aplicada a negocios reales. Desde <strong>La Línea (Campo de Gibraltar, Cádiz)</strong>, ayudo a autónomos, micropymes y comercios a trabajar mejor y ahorrar tiempo.
+        </p>
+        <p class="about-text sr sr-d2">
+          Mi enfoque combina herramientas digitales accesibles con metodologías de mejora continua como <strong>Lean y Kaizen</strong>. Mi principio es simple: <em>"primero ordenar, después automatizar"</em>. Automatizar un proceso desordenado solo consigue que el problema vaya más rápido.
+        </p>
+        <p class="about-text sr sr-d2">
+          No se trata de usar tecnología por moda, sino de utilizar la herramienta adecuada en el momento adecuado, de forma sostenible y rentable para cada negocio.
+        </p>
+        <div class="principles sr sr-d3" aria-label="Principios de trabajo">
+          <div class="principle">
+            <i class="fas fa-sort-amount-up" aria-hidden="true"></i>
+            <span>Orden antes que automatización</span>
+          </div>
+          <div class="principle">
+            <i class="fas fa-chart-line" aria-hidden="true"></i>
+            <span>Resultados antes que herramientas</span>
+          </div>
+          <div class="principle">
+            <i class="fas fa-puzzle-piece" aria-hidden="true"></i>
+            <span>Personalización ante todo</span>
+          </div>
+          <div class="principle">
+            <i class="fas fa-comments" aria-hidden="true"></i>
+            <span>Lenguaje sencillo, sin tecnicismos</span>
+          </div>
+        </div>
+        <div class="resp-badges sr sr-d4">
+          <div class="resp-badge">
+            <div class="t">&lt;24h</div>
+            <div class="l">Tiempo de respuesta</div>
+          </div>
+          <div class="resp-badge">
+            <div class="t">48h</div>
+            <div class="l">Propuesta lista</div>
+          </div>
+          <div class="resp-badge">
+            <div class="t">Lean</div>
+            <div class="l">Metodología continua</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICIOS DESTACADOS ===== -->
+<section class="sec services" id="servicios" aria-label="Servicios de DamIASolve">
+  <div class="container">
+    <div class="tc">
+      <span class="sec-label sr">Qué hago</span>
+      <h2 class="sec-title sr sr-d1">Nuestros servicios</h2>
+      <p class="sec-sub sr sr-d2">Soluciones de automatización e IA adaptadas al tamaño real de tu negocio. Sin tecnicismos, sin complicaciones, con resultados concretos.</p>
+    </div>
+    <div class="srv-grid">
+
+      <article class="srv-card sr">
+        <div class="srv-ico"><i class="fas fa-search-dollar" aria-hidden="true"></i></div>
+        <h3 class="srv-title">Diagnóstico de procesos</h3>
+        <p class="srv-desc">Analizo tu negocio para detectar tareas repetitivas, pérdidas de tiempo y oportunidades reales de automatización. Entrego un plan de acción claro.</p>
+        <span class="srv-price">Desde 90 €</span>
+      </article>
+
+      <article class="srv-card sr sr-d1">
+        <div class="srv-ico"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+        <h3 class="srv-title">WhatsApp Business</h3>
+        <p class="srv-desc">Automatiza respuestas, configura mensajes de bienvenida, recordatorios y flujos de atención al cliente profesionales en WhatsApp.</p>
+        <span class="srv-price">Desde 129 €</span>
+      </article>
+
+      <article class="srv-card sr sr-d2">
+        <div class="srv-ico"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
+        <h3 class="srv-title">Sistema de citas y recordatorios</h3>
+        <p class="srv-desc">Reservas automáticas, confirmaciones y recordatorios para clínicas, peluquerías, academias y cualquier negocio con citas programadas.</p>
+        <span class="srv-price">Desde 450 € + 89 €/mes</span>
+      </article>
+
+      <article class="srv-card sr sr-d3">
+        <div class="srv-ico"><i class="fas fa-envelope-open-text" aria-hidden="true"></i></div>
+        <h3 class="srv-title">Automatización de correos</h3>
+        <p class="srv-desc">Clasifica correos automáticamente, guarda adjuntos, registra datos en hojas de cálculo y deja de perder mensajes importantes.</p>
+        <span class="srv-price">Desde 250 €</span>
+      </article>
+
+      <article class="srv-card sr">
+        <div class="srv-ico"><i class="fas fa-robot" aria-hidden="true"></i></div>
+        <h3 class="srv-title">Asistentes de IA para negocios</h3>
+        <p class="srv-desc">Asistentes personalizados para atender clientes, responder FAQs, captar leads o apoyar procesos internos de forma inteligente.</p>
+        <span class="srv-price">Desde 450 €</span>
+      </article>
+
+      <article class="srv-card sr sr-d1">
+        <div class="srv-ico"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></div>
+        <h3 class="srv-title">Albaranes y facturas</h3>
+        <p class="srv-desc">Registra documentos automáticamente, organiza en Drive, detecta errores y lleva el control de tus proveedores sin esfuerzo.</p>
+        <span class="srv-price">Desde 220 €</span>
+      </article>
+
+      <article class="srv-card sr sr-d2">
+        <div class="srv-ico"><i class="fas fa-share-alt" aria-hidden="true"></i></div>
+        <h3 class="srv-title">Automatización de redes sociales</h3>
+        <p class="srv-desc">Genera ideas, programa publicaciones, organiza calendarios de contenido y publica en múltiples canales con menos tiempo.</p>
+        <span class="srv-price">Desde 129 €</span>
+      </article>
+
+      <article class="srv-card sr sr-d3">
+        <div class="srv-ico"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+        <h3 class="srv-title">Documentos e informes automáticos</h3>
+        <p class="srv-desc">Genera presupuestos, informes mensuales y presentaciones de forma automática desde tus datos, exportados directamente a PDF.</p>
+        <span class="srv-price">Desde 250 €</span>
+      </article>
+
+      <article class="srv-card sr">
+        <div class="srv-ico"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
+        <h3 class="srv-title">Formación práctica en IA</h3>
+        <p class="srv-desc">Aprende a usar ChatGPT, WhatsApp Business y herramientas digitales de forma sencilla y aplicada. Presencial u online, sin tecnicismos.</p>
+        <span class="srv-price">Desde 350 € + IVA</span>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLANES ===== -->
+<section class="sec pricing" id="planes" aria-label="Planes y precios">
+  <div class="container">
+    <div class="tc">
+      <span class="sec-label sr">Planes de automatización</span>
+      <h2 class="sec-title sr sr-d1">Elige el plan que se adapta a tu negocio</h2>
+      <p class="sec-sub sr sr-d2">Sin permanencia. Cambia, pausa o cancela cuando quieras. Tus automatizaciones seguirán funcionando aunque cambies de plan.</p>
+    </div>
+
+    <div class="plans-grid">
+
+      <!-- LITE -->
+      <div class="plan sr">
+        <div class="plan-name">Plan Lite</div>
+        <div class="plan-title">Hazlo tú mismo</div>
+        <p class="plan-tag">Para empezar con algo sencillo</p>
+        <div class="plan-price">
+          <span class="amt">250€</span>
+          <span class="per"> pago único</span>
+        </div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>1 flujo básico de automatización</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Vídeo explicativo de uso</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Checklist o guía básica</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Entrega lista para gestionar</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline plan-cta">Empezar ahora</a>
+      </div>
+
+      <!-- BÁSICO -->
+      <div class="plan sr sr-d1">
+        <div class="plan-name">Plan Básico</div>
+        <div class="plan-title">Funciona sin preocuparte</div>
+        <p class="plan-tag">Automatiza las tareas del día a día</p>
+        <div class="plan-price">
+          <span class="amt">450€</span>
+          <span class="per"> implementación</span>
+          <div class="plus">+ 89 €/mes soporte</div>
+        </div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>1 o 2 procesos automatizados</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Configuración inicial completa</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Soporte básico mensual</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>1 sesión de formación</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline plan-cta">Contratar</a>
+      </div>
+
+      <!-- PROFESIONAL -->
+      <div class="plan hot sr sr-d2">
+        <div class="plan-badge">Más popular</div>
+        <div class="plan-name">Plan Profesional</div>
+        <div class="plan-title">Crece en piloto automático</div>
+        <p class="plan-tag">Solución completa con seguimiento</p>
+        <div class="plan-price">
+          <span class="amt">590€</span>
+          <span class="per"> implementación</span>
+          <div class="plus">+ 149 €/mes soporte</div>
+        </div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Todo lo del Plan Básico</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Automatizaciones más completas</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Informe mensual de rendimiento</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Optimización trimestral incluida</li>
+        </ul>
+        <a href="#contacto" class="btn btn-pri plan-cta">Contratar</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="plan sr sr-d3">
+        <div class="plan-name">Plan Premium</div>
+        <div class="plan-title">Gestión Total</div>
+        <p class="plan-tag">Delega la parte tecnológica</p>
+        <div class="plan-price">
+          <span class="amt" style="font-size:24px">A medida</span>
+          <div class="plus">+ 349 €/mes</div>
+        </div>
+        <ul class="plan-feats">
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Automatizaciones avanzadas</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Plan estratégico trimestral</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Soporte prioritario &lt;24h</li>
+          <li class="plan-feat"><i class="fas fa-check" aria-hidden="true"></i>Revisión continua de procesos</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline plan-cta">Solicitar presupuesto</a>
+      </div>
+
+    </div>
+
+    <!-- Mantenimiento -->
+    <div style="margin-top:64px">
+      <div class="tc">
+        <span class="sec-label sr">Soporte mensual</span>
+        <h3 class="sec-title sr sr-d1" style="font-size:clamp(22px,3vw,34px)">Mantenimiento de tus automatizaciones</h3>
+      </div>
+      <div class="maint-grid">
+        <div class="maint-card sr">
+          <div class="maint-name">Esencial</div>
+          <div class="maint-title">Revisión mínima</div>
+          <div class="maint-desc">Para sistemas sencillos que solo necesitan una supervisión básica periódica.</div>
+          <div class="maint-price">19€ <span>/mes</span></div>
+        </div>
+        <div class="maint-card sr sr-d1">
+          <div class="maint-name">Avanzado</div>
+          <div class="maint-title">Más movimiento</div>
+          <div class="maint-desc">Para sistemas con más actividad o que necesitan pequeños ajustes puntuales.</div>
+          <div class="maint-price">39€ <span>/mes</span></div>
+        </div>
+        <div class="maint-card sr sr-d2">
+          <div class="maint-name">Completo</div>
+          <div class="maint-title">Seguimiento total</div>
+          <div class="maint-desc">Para negocios que necesitan más acompañamiento y seguimiento continuo.</div>
+          <div class="maint-price">59€ <span>/mes</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-note sr">
+      <i class="fas fa-info-circle" aria-hidden="true"></i>
+      Sin permanencia · Mano de obra fuera de plan: <strong>35 €/hora</strong> · Pago por transferencia SEPA, Bizum, PayPal o Stripe · Activación en menos de 24 h hábiles tras confirmación del pago
+    </div>
+  </div>
+</section>
+
+<!-- ===== CÓMO TRABAJO ===== -->
+<section class="sec process" id="como-trabajo" aria-label="Cómo trabaja DamIASolve">
+  <div class="container">
+    <div class="tc">
+      <span class="sec-label sr" style="color:#5bb5e0">Proceso de trabajo</span>
+      <h2 class="sec-title sr sr-d1">Claro, sin sorpresas</h2>
+      <p class="sec-sub sr sr-d2">Antes de proponer cualquier solución, entiendo cómo funciona tu negocio. Cada paso tiene un objetivo concreto y medible.</p>
+    </div>
+    <div class="steps">
+      <div class="sr">
+        <div class="step-num">01</div>
+        <div class="step-ico"><i class="fas fa-comments" aria-hidden="true"></i></div>
+        <h3 class="step-t">Análisis inicial</h3>
+        <p class="step-d">Revisamos cómo trabaja el negocio hoy y qué problema queremos resolver. Sin compromisos ni costes iniciales.</p>
+      </div>
+      <div class="sr sr-d1">
+        <div class="step-num">02</div>
+        <div class="step-ico"><i class="fas fa-search" aria-hidden="true"></i></div>
+        <h3 class="step-t">Detección de oportunidades</h3>
+        <p class="step-d">Identifico qué tareas se pueden simplificar, mejorar o automatizar para que tengan impacto real en tu día a día.</p>
+      </div>
+      <div class="sr sr-d2">
+        <div class="step-num">03</div>
+        <div class="step-ico"><i class="fas fa-file-contract" aria-hidden="true"></i></div>
+        <h3 class="step-t">Propuesta de solución</h3>
+        <p class="step-d">Planteo una solución clara con alcance definido, coste exacto y sin tecnicismos. Solo lo que aporta valor.</p>
+      </div>
+      <div class="sr sr-d3">
+        <div class="step-num">04</div>
+        <div class="step-ico"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+        <h3 class="step-t">Implementación</h3>
+        <p class="step-d">Configuro herramientas, automatizaciones y sistemas. Activación en menos de 24 horas hábiles tras el pago.</p>
+      </div>
+      <div class="sr sr-d4">
+        <div class="step-num">05</div>
+        <div class="step-ico"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+        <h3 class="step-t">Formación y entrega</h3>
+        <p class="step-d">Explico cómo usar la solución para que tu negocio saque partido desde el primer día. Sin dependencias innecesarias.</p>
+      </div>
+      <div class="sr sr-d5">
+        <div class="step-num">06</div>
+        <div class="step-ico"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+        <h3 class="step-t">Mejora continua</h3>
+        <p class="step-d">Revisamos el sistema y aplicamos mejoras con el tiempo. La tecnología debe evolucionar con tu negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATÁLOGO COMPLETO (ACORDEÓN) ===== -->
+<section class="sec catalog" id="catalogo" aria-label="Catálogo completo de servicios">
+  <div class="container">
+    <div class="tc">
+      <span class="sec-label sr">Catálogo completo</span>
+      <h2 class="sec-title sr sr-d1">Todos los servicios disponibles</h2>
+      <p class="sec-sub sr sr-d2">Haz clic en cada servicio para ver qué incluye y el precio orientativo.</p>
+    </div>
+    <div class="accordion sr">
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-search-dollar" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Diagnóstico de procesos y automatización</div><div class="acc-p">Desde 90 €</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Analizo cómo trabaja tu negocio para detectar tareas repetitivas, pérdidas de tiempo y oportunidades de mejora. Entrego una visión clara de qué se puede automatizar y por dónde conviene empezar.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Revisión del proceso actual</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Detección de tareas repetitivas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Identificación de errores frecuentes</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Propuesta de mejoras prácticas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Recomendación de automatizaciones</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Priorización por impacto y coste</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fab fa-whatsapp" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Automatización de WhatsApp Business</div><div class="acc-p">Desde 129 €</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Configuro WhatsApp Business de forma profesional para mejorar la atención al cliente, reducir respuestas repetitivas y facilitar el seguimiento de conversaciones, pedidos, citas y solicitudes.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Mensajes de bienvenida y ausencia</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Respuestas rápidas personalizadas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Etiquetas para organizar clientes</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Flujos de atención al cliente</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Recordatorios automáticos</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Integración con hojas de cálculo</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Sistema de citas, recordatorios y seguimiento</div><div class="acc-p">Desde 450 € + 89 €/mes</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Ideal para clínicas de fisioterapia, centros de estética, peluquerías, academias y consultas. Reduce olvidos, mejora la organización y ahorra tiempo en confirmaciones manuales.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Registro de citas automatizado</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Confirmaciones automáticas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Recordatorios por WhatsApp o email</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Lista diaria de citas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Seguimiento de clientes</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Métricas básicas de actividad</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-envelope-open-text" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Automatización de correos electrónicos</div><div class="acc-p">Desde 250 €</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Organiza correos automáticamente, clasifica información y evita perder mensajes importantes. Ideal para negocios que gestionan licitaciones, pedidos, facturas o solicitudes por email.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Clasificación automática de correos</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Guardado de adjuntos en carpetas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Registro en hojas de cálculo</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Avisos automáticos configurables</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Filtros por proveedor o cliente</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Extracción de datos de correos</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-robot" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Asistentes de IA para negocios</div><div class="acc-p">Desde 450 €</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Asistentes personalizados para atender clientes, guiar procesos internos, responder preguntas frecuentes, captar leads o preparar informes y propuestas comerciales.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Atención inicial de clientes</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Diagnóstico de necesidades</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Consulta documental interna</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Generación de propuestas e informes</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Captación y cualificación de leads</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Preguntas frecuentes automatizadas</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Control de albaranes y facturas</div><div class="acc-p">Desde 220 €</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Evita perder documentación, detecta errores y facilita la revisión de pagos. No sustituye a tu asesoría contable; complementa la organización documental del negocio.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Formulario de registro de albaranes</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Subida de fotos o documentos</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Organización automática en Drive</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Registro en hoja de cálculo</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Panel de control básico</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Filtros por proveedor o mes</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-share-alt" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Automatización de redes sociales</div><div class="acc-p">129 € – 499 €</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Crea, organiza y publica contenido de forma más eficiente. Ideal para negocios que quieren presencia en redes sin dedicar horas cada semana.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Mini: 129 € (básico)</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Estándar: 199 €</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Completa: 299 € – 399 €</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Multicanal: hasta 499 €</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Calendarios de contenido</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Publicación automatizada</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-file-alt" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Automatización de documentos e informes</div><div class="acc-p">Desde 250 €</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Genera documentos, informes, presupuestos o presentaciones de forma automática o semiautomática a partir de tus datos, con exportación directa a PDF.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Plantillas de Docs, Word o Slides</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Relleno automático de datos</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Generación de informes mensuales</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Exportación a PDF automática</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Organización en carpetas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Envío por email automático</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Formación práctica en IA, automatización y herramientas digitales</div><div class="acc-p">Desde 350 € + IVA</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Formación práctica y sin tecnicismos para negocios, autónomos o equipos que quieren aprender a usar la IA y las herramientas digitales de verdad. Presencial u online, adaptada al sector.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Uso práctico de ChatGPT</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>WhatsApp Business para vender mejor</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Automatización básica de tareas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Productividad con IA</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Presencial o sesiones online</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Adaptada al sector del negocio</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="acc-item">
+        <button class="acc-hdr" onclick="toggleAcc(this)" aria-expanded="false">
+          <div class="acc-left">
+            <div class="acc-ico"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
+            <div><div class="acc-name">Consultoría y mejora de procesos</div><div class="acc-p">Desde 90 €</div></div>
+          </div>
+          <i class="fas fa-chevron-down acc-arr" aria-hidden="true"></i>
+        </button>
+        <div class="acc-body"><div class="acc-cnt">
+          <p>Para negocios que no necesitan automatización todavía, pero sí ordenar mejor su forma de trabajar. El objetivo es simplificar procesos y mejorar la organización antes de implantar tecnología.</p>
+          <div class="acc-list">
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Revisión del proceso actual</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Identificación de cuellos de botella</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Propuesta de mejora detallada</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Simplificación de tareas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Recomendación de herramientas</div>
+            <div class="acc-li"><i class="fas fa-check" aria-hidden="true"></i>Plan de acción por fases</div>
+          </div>
+        </div></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-band tc" aria-label="Llamada a la acción">
+  <div class="container">
+    <h2 class="sec-title sr">¿Listo para ahorrar tiempo en tu negocio?</h2>
+    <p class="cta-sub sr sr-d1">
+      Reserva un diagnóstico y te cuento qué podemos automatizar en tu caso concreto. Sin compromiso ni tecnicismos. Respondo en menos de 24 horas.
+    </p>
+    <div class="cta-btns sr sr-d2">
+      <a href="#contacto" class="btn btn-white btn-lg">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i>
+        Reserva tu diagnóstico
+      </a>
+      <a href="tel:+34633044489" class="btn btn-ghost btn-lg">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+        633 044 489
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<section class="sec contact" id="contacto" aria-label="Contacto con DamIASolve">
+  <div class="container">
+    <div class="tc" style="margin-bottom:60px">
+      <span class="sec-label sr">Hablamos</span>
+      <h2 class="sec-title sr sr-d1">Contacta con DamIASolve</h2>
+      <p class="sec-sub sr sr-d2">Cuéntame qué necesitas. Te respondo en menos de 24 horas hábiles y sin ningún tipo de compromiso.</p>
+    </div>
+    <div class="contact-grid">
+
+      <!-- Datos de contacto -->
+      <aside class="contact-aside sr" aria-label="Información de contacto">
+        <div class="c-item">
+          <div class="c-ico"><i class="fas fa-phone" aria-hidden="true"></i></div>
+          <div>
+            <div class="c-lbl">Teléfono</div>
+            <div class="c-val"><a href="tel:+34633044489">633 044 489</a></div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-ico"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+          <div>
+            <div class="c-lbl">Email</div>
+            <div class="c-val"><a href="mailto:ia@damiasolve.com">ia@damiasolve.com</a></div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-ico"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+          <div>
+            <div class="c-lbl">Ubicación</div>
+            <div class="c-val">La Línea · Campo de Gibraltar · Cádiz</div>
+          </div>
+        </div>
+        <div class="c-item">
+          <div class="c-ico"><i class="fas fa-clock" aria-hidden="true"></i></div>
+          <div>
+            <div class="c-lbl">Tiempo de respuesta</div>
+            <div class="c-val">Menos de 24 horas hábiles</div>
+          </div>
+        </div>
+        <nav class="socials" aria-label="Redes sociales">
+          <a href="https://www.instagram.com/damiasolve?igsh=MWJtajVneXI1ZTg3aA==" class="soc-a" target="_blank" rel="noopener noreferrer" aria-label="Instagram de DamIASolve"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1CnYanoxBP/" class="soc-a" target="_blank" rel="noopener noreferrer" aria-label="Facebook de DamIASolve"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/in/damianrosalesnavas?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="soc-a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Damián Rosales"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/34633044489" class="soc-a" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp de DamIASolve"><i class="fab fa-whatsapp"></i></a>
+        </nav>
+      </aside>
+
+      <!-- Formulario -->
+      <div class="sr sr-d1">
+        <div class="contact-form">
+          <h3 class="form-t">Cuéntame tu caso</h3>
+          <p class="form-st">Sin compromiso. Te respondo en menos de 24 horas hábiles.</p>
+          <form id="contactForm" novalidate aria-label="Formulario de contacto">
+            <div class="fg-row">
+              <div class="fg">
+                <label for="nombre">Nombre <span aria-hidden="true">*</span></label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name" />
+              </div>
+              <div class="fg">
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="fg">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required autocomplete="email" />
+            </div>
+            <div class="fg">
+              <label for="negocio">Tipo de negocio</label>
+              <select id="negocio" name="negocio">
+                <option value="">Selecciona una opción</option>
+                <option>Autónomo / Freelance</option>
+                <option>Micropyme (1–9 empleados)</option>
+                <option>Pequeña empresa (10–49 empleados)</option>
+                <option>Comercio local</option>
+                <option>Academia / Formación</option>
+                <option>Servicios profesionales</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="servicio">¿Qué servicio te interesa?</label>
+              <select id="servicio" name="servicio">
+                <option value="">Selecciona un servicio</option>
+                <option>Diagnóstico de procesos (desde 90 €)</option>
+                <option>Plan Lite (250 €)</option>
+                <option>Plan Básico (450 € + 89 €/mes)</option>
+                <option>Plan Profesional (590 € + 149 €/mes)</option>
+                <option>Plan Premium (a medida + 349 €/mes)</option>
+                <option>WhatsApp Business (desde 129 €)</option>
+                <option>Sistema de citas y recordatorios</option>
+                <option>Automatización de correos (desde 250 €)</option>
+                <option>Asistentes de IA (desde 450 €)</option>
+                <option>Automatización de RRSS</option>
+                <option>Formación práctica en IA</option>
+                <option>Consultoría de procesos</option>
+                <option>No sé, quiero orientación</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="mensaje">Cuéntame tu caso <span aria-hidden="true">*</span></label>
+              <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente qué tareas te consumen más tiempo o qué problema quieres resolver en tu negocio..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-pri form-submit">
+              <i class="fas fa-paper-plane" aria-hidden="true"></i>
+              Enviar mensaje
+            </button>
+            <p class="form-priv">
+              <i class="fas fa-lock" aria-hidden="true"></i>
+              Tus datos están protegidos. Solo los uso para responderte.
+            </p>
+          </form>
+          <div id="form-ok" role="status">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <h4>¡Mensaje enviado!</h4>
+            <p>Te respondo en menos de 24 horas hábiles. Mientras tanto puedes seguirme en redes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" aria-label="Pie de página">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo" aria-label="DamIASolve – Volver al inicio">
+          <img src="public/Logo_DamIASolve111.png" alt="Logo DamIASolve" />
+          <span class="logo-text">Dam<span>IA</span>Solve</span>
+        </a>
+        <p class="footer-desc">
+          Consultoría de automatización, optimización de procesos e inteligencia artificial para pequeños negocios y micropymes. Soluciones prácticas, asequibles y adaptadas a cada negocio.
+        </p>
+        <nav class="footer-soc" aria-label="Redes sociales footer">
+          <a href="https://www.instagram.com/damiasolve?igsh=MWJtajVneXI1ZTg3aA==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/share/1CnYanoxBP/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.linkedin.com/in/damianrosalesnavas?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://wa.me/34633044489" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </nav>
+      </div>
+      <div>
+        <div class="f-col-t">Servicios</div>
+        <ul class="f-links">
+          <li><a href="#servicios">Diagnóstico de procesos</a></li>
+          <li><a href="#servicios">WhatsApp Business</a></li>
+          <li><a href="#servicios">Asistentes de IA</a></li>
+          <li><a href="#servicios">Automatización de correos</a></li>
+          <li><a href="#servicios">Sistema de citas</a></li>
+          <li><a href="#servicios">Formación en IA</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-t">Planes</div>
+        <ul class="f-links">
+          <li><a href="#planes">Plan Lite — 250 €</a></li>
+          <li><a href="#planes">Plan Básico — 450 €</a></li>
+          <li><a href="#planes">Plan Profesional — 590 €</a></li>
+          <li><a href="#planes">Plan Premium — A medida</a></li>
+          <li><a href="#planes">Mantenimiento desde 19 €/mes</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="f-col-t">Contacto</div>
+        <div class="f-c-item"><i class="fas fa-phone" aria-hidden="true"></i><a href="tel:+34633044489">633 044 489</a></div>
+        <div class="f-c-item"><i class="fas fa-envelope" aria-hidden="true"></i><a href="mailto:ia@damiasolve.com">ia@damiasolve.com</a></div>
+        <div class="f-c-item"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>La Línea · Cádiz · España</span></div>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2025 DamIASolve · Damián Rosales Navas · La Línea, Campo de Gibraltar, Cádiz</p>
+      <p>Automatización e IA para micropymes en España</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== JAVASCRIPT ===== -->
+<script>
+(function () {
+  'use strict';
+
+  /* --- HEADER SCROLL --- */
+  const hdr = document.getElementById('hdr');
+  const navCta = document.getElementById('nav-cta');
+  function onScroll() {
+    const scrolled = window.scrollY > 60;
+    hdr.classList.toggle('scrolled', scrolled);
+    if (navCta) navCta.style.display = scrolled ? 'inline-flex' : 'none';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* --- HAMBURGER --- */
+  const burger = document.getElementById('hamburger');
+  const mobMenu = document.getElementById('mob-menu');
+  burger.addEventListener('click', function () {
+    const open = mobMenu.classList.toggle('open');
+    burger.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', String(open));
+  });
+  document.querySelectorAll('.nav-mob-link, .mob-menu .btn').forEach(function (el) {
+    el.addEventListener('click', function () {
+      mobMenu.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* --- SMOOTH SCROLL --- */
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 78, behavior: 'smooth' });
+    });
+  });
+
+  /* --- SCROLL REVEAL --- */
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('vis');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.sr').forEach(function (el) { observer.observe(el); });
+
+  /* --- ACCORDION --- */
+  window.toggleAcc = function (btn) {
+    const body = btn.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.acc-hdr').forEach(function (h) { h.classList.remove('active'); h.setAttribute('aria-expanded', 'false'); });
+    document.querySelectorAll('.acc-body').forEach(function (b) { b.classList.remove('open'); });
+    if (!isOpen) {
+      btn.classList.add('active');
+      btn.setAttribute('aria-expanded', 'true');
+      body.classList.add('open');
+    }
+  };
+
+  /* --- CONTACT FORM --- */
+  const form = document.getElementById('contactForm');
+  const formOk = document.getElementById('form-ok');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nombre  = document.getElementById('nombre').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const mensaje = document.getElementById('mensaje').value.trim();
+      if (!nombre || !email || !mensaje) {
+        alert('Por favor, rellena los campos obligatorios: nombre, email y mensaje.');
+        return;
+      }
+      const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRe.test(email)) {
+        alert('Por favor, introduce un email válido.');
+        return;
+      }
+      const btn = form.querySelector('.form-submit');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando…';
+      btn.disabled = true;
+      /*
+        Aquí conecta el formulario con tu backend, Formspree o cualquier servicio.
+        Ejemplo con Formspree:
+          fetch('https://formspree.io/f/TU_ID', { method: 'POST', body: new FormData(form) })
+            .then(() => { form.style.display = 'none'; formOk.style.display = 'block'; })
+            .catch(() => { btn.innerHTML = 'Enviar mensaje'; btn.disabled = false; });
+      */
+      setTimeout(function () {
+        form.style.display = 'none';
+        formOk.style.display = 'block';
+      }, 1000);
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
