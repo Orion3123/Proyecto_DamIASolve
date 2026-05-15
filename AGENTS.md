@@ -34,6 +34,16 @@ Antes de modificar código:
 - Si hay pruebas, ejecutarlas o explicar cómo ejecutarlas.
 - Si no hay pruebas, proponer una prueba manual sencilla.
 
+## Integraciones y plugins
+
+Este proyecto usa el plugin **make-skills** (`make-skills@make-marketplace`) para trabajar con automatizaciones de Make.com (antes Integromat). Proporciona habilidades para diseñar, construir y desplegar escenarios de Make.
+
+Para instalar el plugin en una sesión nueva:
+```
+claude plugins marketplace add integromat/make-skills
+claude plugins install make-skills@make-marketplace
+```
+
 ## Estilo de respuesta
 
 Responder en español de España, de forma clara, directa y práctica.

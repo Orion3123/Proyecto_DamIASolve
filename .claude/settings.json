@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "extraKnownMarketplaces": {
+    "make-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "integromat/make-skills"
+      }
+    }
+  },
+  "enabledPlugins": {
+    "make-skills@make-marketplace": true
+  }
+}
