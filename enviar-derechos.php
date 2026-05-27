@@ -7,10 +7,10 @@
 /* ══════════════════════════════════════════════════════
    CONFIGURACIÓN — ajusta estos valores con tus datos
    ══════════════════════════════════════════════════════ */
-define('SMTP_HOST',  'smtp.hostinger.com');
-define('SMTP_PORT',  587);                       // 587 = TLS (recomendado) | 465 = SSL
-define('SMTP_USER',  'ia@damiasolve.com');       // tu cuenta de correo en Hostinger
-define('SMTP_PASS',  'TU_CONTRASEÑA_AQUI');      // contraseña del correo en Hostinger
+define('SMTP_HOST',  'smtp.office365.com');
+define('SMTP_PORT',  587);                       // Microsoft usa siempre 587 + STARTTLS
+define('SMTP_USER',  'ia@damiasolve.com');       // tu cuenta de Microsoft/Outlook
+define('SMTP_PASS',  'TU_CONTRASEÑA_AQUI');      // contraseña de tu cuenta de Outlook
 define('DESTINO',    'ia@damiasolve.com');
 define('PAGINA',     'https://damiasolve.com/privacidad');
 
@@ -102,13 +102,13 @@ function smtp_send(string $host, int $port, string $user, string $pass,
 
     $read(); // banner de bienvenida
 
-    $cmd("EHLO damiasolve.com");
+    $cmd("EHLO " . (gethostname() ?: 'damiasolve.com'));
 
     /* STARTTLS solo en puerto 587 */
     if ($port === 587) {
         $cmd("STARTTLS");
         stream_socket_enable_crypto($sock, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
-        $cmd("EHLO damiasolve.com");
+        $cmd("EHLO " . (gethostname() ?: 'damiasolve.com'));
     }
 
     $cmd("AUTH LOGIN");
