@@ -1,12 +1,17 @@
 <?php
 /**
  * DamIASolve – Procesador de solicitudes de derechos RGPD
- * Envía la solicitud a ia@damiasolve.com y redirige al usuario.
+ * Usa SMTP de Hostinger para evitar correo no deseado.
  */
 
-/* ── Configuración ─────────────────────────────────── */
+/* ══════════════════════════════════════════════════════
+   CONFIGURACIÓN — ajusta estos valores con tus datos
+   ══════════════════════════════════════════════════════ */
+define('SMTP_HOST',  'smtp.hostinger.com');
+define('SMTP_PORT',  587);                       // 587 = TLS (recomendado) | 465 = SSL
+define('SMTP_USER',  'ia@damiasolve.com');       // tu cuenta de correo en Hostinger
+define('SMTP_PASS',  'TU_CONTRASEÑA_AQUI');      // contraseña del correo en Hostinger
 define('DESTINO',    'ia@damiasolve.com');
-define('REMITENTE',  'noreply@damiasolve.com');
 define('PAGINA',     'https://damiasolve.com/privacidad');
 
 /* ── Solo aceptamos POST ───────────────────────────── */
@@ -15,19 +20,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-/* ── Función de sanitización ───────────────────────── */
-function limpiar(string $valor): string {
-    return htmlspecialchars(strip_tags(trim($valor)), ENT_QUOTES, 'UTF-8');
+/* ── Sanitización ──────────────────────────────────── */
+function limpiar(string $v): string {
+    return htmlspecialchars(strip_tags(trim($v)), ENT_QUOTES, 'UTF-8');
 }
 
-/* ── Recoger y limpiar campos ──────────────────────── */
+/* ── Recoger campos ────────────────────────────────── */
 $nombre      = limpiar($_POST['nombre']      ?? '');
 $email       = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
 $derecho     = limpiar($_POST['derecho']     ?? '');
 $descripcion = limpiar($_POST['descripcion'] ?? '');
 $procedencia = limpiar($_POST['procedencia'] ?? 'Política de Privacidad – damiasolve.com');
 
-/* ── Validación básica ─────────────────────────────── */
+/* ── Validación ────────────────────────────────────── */
 $derechos_validos = [
     'Derecho de Acceso',
     'Derecho de Rectificación',
@@ -42,34 +47,112 @@ if (!$nombre || !$email || !in_array($derecho, $derechos_validos, true) || !$des
     exit;
 }
 
-/* ── Construir el email ────────────────────────────── */
-$asunto = '[RGPD] ' . $derecho . ' – ' . $nombre;
+/* ── Construir mensaje ─────────────────────────────── */
+$asunto  = '[RGPD] ' . $derecho . ' - ' . $nombre;
 
-$cuerpo  = "=== SOLICITUD DE EJERCICIO DE DERECHOS RGPD ===\n\n";
-$cuerpo .= "Procedencia:  " . $procedencia . "\n";
-$cuerpo .= "Derecho:      " . $derecho . "\n";
-$cuerpo .= "Nombre:       " . $nombre . "\n";
-$cuerpo .= "Email:        " . $email . "\n";
-$cuerpo .= "Fecha/hora:   " . date('d/m/Y H:i:s') . " (UTC)\n\n";
-$cuerpo .= "--- DESCRIPCIÓN DE LA SOLICITUD ---\n";
-$cuerpo .= $descripcion . "\n\n";
-$cuerpo .= "===========================================\n";
-$cuerpo .= "Plazo legal de respuesta: 1 mes desde esta fecha.\n";
-$cuerpo .= "Generado automáticamente desde damiasolve.com\n";
+$cuerpo  = "=== SOLICITUD DE EJERCICIO DE DERECHOS RGPD ===\r\n\r\n";
+$cuerpo .= "Procedencia:  " . $procedencia . "\r\n";
+$cuerpo .= "Derecho:      " . $derecho . "\r\n";
+$cuerpo .= "Nombre:       " . $nombre . "\r\n";
+$cuerpo .= "Email:        " . $email . "\r\n";
+$cuerpo .= "Fecha/hora:   " . date('d/m/Y H:i:s') . " (UTC)\r\n\r\n";
+$cuerpo .= "--- DESCRIPCION DE LA SOLICITUD ---\r\n";
+$cuerpo .= $descripcion . "\r\n\r\n";
+$cuerpo .= "===========================================\r\n";
+$cuerpo .= "Plazo legal de respuesta: 1 mes desde esta fecha.\r\n";
+$cuerpo .= "Generado automaticamente desde damiasolve.com\r\n";
 
-$cabeceras  = "From: DamIASolve Privacidad <" . REMITENTE . ">\r\n";
-$cabeceras .= "Reply-To: " . $email . "\r\n";
-$cabeceras .= "Content-Type: text/plain; charset=UTF-8\r\n";
-$cabeceras .= "Content-Transfer-Encoding: 8bit\r\n";
-$cabeceras .= "X-Mailer: DamIASolve-RGPD/1.0\r\n";
+/* ══════════════════════════════════════════════════════
+   ENVÍO POR SMTP (sin librerías externas)
+   ══════════════════════════════════════════════════════ */
+function smtp_send(string $host, int $port, string $user, string $pass,
+                   string $from, string $to, string $subject, string $body,
+                   string $replyTo = ''): bool
+{
+    $ctx = stream_context_create([
+        'ssl' => [
+            'verify_peer'       => true,
+            'verify_peer_name'  => true,
+            'allow_self_signed' => false,
+        ],
+    ]);
+
+    /* Conexión: TLS en puerto 587, SSL directo en 465 */
+    if ($port === 465) {
+        $sock = @stream_socket_client("ssl://{$host}:{$port}", $errno, $errstr, 15, STREAM_CLIENT_CONNECT, $ctx);
+    } else {
+        $sock = @stream_socket_client("tcp://{$host}:{$port}", $errno, $errstr, 15);
+    }
+
+    if (!$sock) return false;
+
+    $read = function () use ($sock): string {
+        $buf = '';
+        while ($line = fgets($sock, 512)) {
+            $buf .= $line;
+            if ($line[3] === ' ') break;  // última línea de respuesta SMTP
+        }
+        return $buf;
+    };
+
+    $cmd = function (string $c) use ($sock, $read): string {
+        fwrite($sock, $c . "\r\n");
+        return $read();
+    };
+
+    $read(); // banner de bienvenida
+
+    $cmd("EHLO damiasolve.com");
+
+    /* STARTTLS solo en puerto 587 */
+    if ($port === 587) {
+        $cmd("STARTTLS");
+        stream_socket_enable_crypto($sock, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
+        $cmd("EHLO damiasolve.com");
+    }
+
+    $cmd("AUTH LOGIN");
+    $cmd(base64_encode($user));
+    $r = $cmd(base64_encode($pass));
+    if (strpos($r, '235') === false) { fclose($sock); return false; }
+
+    $cmd("MAIL FROM:<{$from}>");
+    $cmd("RCPT TO:<{$to}>");
+    $cmd("DATA");
+
+    $replyHeader = $replyTo ? "Reply-To: {$replyTo}\r\n" : '';
+
+    $message  = "From: DamIASolve Privacidad <{$from}>\r\n";
+    $message .= "To: {$to}\r\n";
+    $message .= $replyHeader;
+    $message .= "Subject: =?UTF-8?B?" . base64_encode($subject) . "?=\r\n";
+    $message .= "MIME-Version: 1.0\r\n";
+    $message .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $message .= "Content-Transfer-Encoding: base64\r\n";
+    $message .= "\r\n";
+    $message .= chunk_split(base64_encode($body));
+    $message .= "\r\n.";
+
+    $r = $cmd($message);
+    $cmd("QUIT");
+    fclose($sock);
+
+    return strpos($r, '250') !== false;
+}
 
 /* ── Enviar ────────────────────────────────────────── */
-$enviado = mail(DESTINO, '=?UTF-8?B?' . base64_encode($asunto) . '?=', $cuerpo, $cabeceras);
+$enviado = smtp_send(
+    SMTP_HOST,
+    SMTP_PORT,
+    SMTP_USER,
+    SMTP_PASS,
+    SMTP_USER,   // From = tu propio correo (evita spam)
+    DESTINO,
+    $asunto,
+    $cuerpo,
+    $email       // Reply-To = email del solicitante
+);
 
-/* ── Redirigir con resultado ───────────────────────── */
-if ($enviado) {
-    header('Location: ' . PAGINA . '?estado=ok#form-derechos');
-} else {
-    header('Location: ' . PAGINA . '?estado=error#form-derechos');
-}
+/* ── Redirigir ─────────────────────────────────────── */
+header('Location: ' . PAGINA . ($enviado ? '?estado=ok' : '?estado=error') . '#form-derechos');
 exit;
