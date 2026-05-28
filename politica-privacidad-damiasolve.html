@@ -629,6 +629,8 @@
 
           <!-- Campo oculto de procedencia -->
           <input type="hidden" name="procedencia" value="Política de Privacidad – damiasolve.com" />
+          <!-- Campo trampa anti-bots: invisible para humanos, los robots lo rellenan -->
+          <input type="text" name="website" id="website-trap" style="display:none !important;position:absolute;left:-9999px;" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
           <div class="form-row">
             <div class="form-group">

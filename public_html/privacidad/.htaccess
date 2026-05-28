@@ -1,0 +1,39 @@
+# ============================================================
+# DamIASolve – .htaccess carpeta /privacidad/
+# Hostinger Shared Hosting – Apache
+# ============================================================
+# Esta carpeta contiene archivos PHP y de log que NUNCA deben
+# ser accesibles directamente desde el navegador.
+# ============================================================
+
+# ── 1. DESACTIVAR LISTADO DE DIRECTORIOS EN ESTA CARPETA
+# Nadie puede ver la lista de archivos de /privacidad/ visitando la URL.
+Options -Indexes
+
+# ── 2. BLOQUEAR ACCESO DIRECTO A ARCHIVOS DE LOG
+# El archivo smtp_debug.log contenía credenciales codificadas.
+# Esta regla impide que CUALQUIER archivo .log sea visible en el navegador,
+# aunque alguien sepa exactamente su nombre.
+<FilesMatch "\.log$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# ── 3. BLOQUEAR ACCESO DIRECTO A config.php
+# El archivo de configuración contiene la contraseña del correo.
+# Solo debe ser leído por otros archivos PHP del servidor, nunca por el navegador.
+<FilesMatch "^config\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# ── 4. BLOQUEAR ACCESO DIRECTO A enviarderechos.php
+# Este script solo debe ejecutarse cuando el formulario envía datos (POST).
+# Acceder directamente desde el navegador (GET) ya lo redirige a la página,
+# pero añadimos esta capa extra de control por si se necesita en el futuro.
+# NOTA: Si el formulario deja de funcionar al activar esta regla, comenta
+# las líneas de FilesMatch enviarderechos para volver al comportamiento anterior.
+# <FilesMatch "^enviarderechos\.php$">
+#     Order Allow,Deny
+#     Deny from all
+# </FilesMatch>
