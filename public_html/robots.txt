@@ -1,0 +1,19 @@
+# ============================================================
+# DamIASolve – robots.txt
+# https://damiasolve.com/robots.txt
+# ============================================================
+# Este archivo le dice a los buscadores (Google, Bing, etc.)
+# qué páginas pueden indexar y cuáles deben ignorar.
+# ============================================================
+
+# Permitir a todos los robots indexar el sitio normalmente
+User-agent: *
+Allow: /
+
+# Excluir archivos internos que no deben aparecer en buscadores
+Disallow: /privacidad/smtp_debug.log
+Disallow: /privacidad/config.php
+Disallow: /privacidad/enviarderechos.php
+
+# Mapa del sitio (ayuda a Google a encontrar todas las páginas)
+Sitemap: https://damiasolve.com/sitemap.xml

@@ -1,0 +1,66 @@
+# ============================================================
+# DamIASolve – .htaccess principal (raíz de public_html)
+# Hostinger Shared Hosting – Apache
+# ============================================================
+
+# ── 1. MOTOR DE REESCRITURA (necesario para HTTPS y otras reglas)
+Options +FollowSymLinks
+RewriteEngine On
+
+# ── 2. REDIRECCIÓN HTTP → HTTPS
+# Todo el tráfico sin cifrar se redirige automáticamente a HTTPS.
+# Esto evita que alguien intercepte datos del formulario.
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── 3. DESACTIVAR LISTADO DE DIRECTORIOS
+# Sin esto, cualquier visitante podría ver todos los archivos de una carpeta
+# como si fuera un explorador de archivos. Con esta línea, solo ven "Forbidden".
+Options -Indexes
+
+# ── 4. CABECERAS DE SEGURIDAD HTTP
+# Estas cabeceras le dicen al navegador del visitante cómo protegerse.
+<IfModule mod_headers.c>
+
+    # Impide que tu web se muestre dentro de un iframe en otra página.
+    # Protege contra ataques "clickjacking" (botones trampa invisibles).
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Evita que el navegador "adivine" el tipo de archivo y lo ejecute mal.
+    # Protege contra archivos disfrazados (p. ej. una imagen que es un script).
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Activa el filtro anti-XSS del navegador (protección extra en navegadores antiguos).
+    Header always set X-XSS-Protection "1; mode=block"
+
+    # Controla qué información de "origen" se envía al hacer clic en un enlace.
+    # "strict-origin-when-cross-origin" es el equilibrio recomendado por Google.
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Desactiva el acceso a micrófono, cámara y geolocalización desde la web.
+    # Tu web no los necesita, así que es mejor dejarlos bloqueados por defecto.
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+
+</IfModule>
+
+# ── 5. BLOQUEAR ACCESO DIRECTO A ARCHIVOS SENSIBLES
+# Nadie debería poder abrir estos archivos desde el navegador.
+# Los tipos bloqueados son:
+#   .log  → archivos de diagnóstico (pueden contener contraseñas)
+#   .md   → archivos de documentación interna
+#   .env  → archivos de configuración de entorno
+#   .bak  → copias de seguridad de archivos
+#   .sql  → volcados de base de datos
+#   .sh   → scripts de terminal
+<FilesMatch "\.(log|md|env|bak|sql|sh)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# ── 6. TIPOS MIME CORRECTOS (mejora compatibilidad y seguridad)
+<IfModule mod_mime.c>
+    AddType text/html .html
+    AddType text/css .css
+    AddType application/javascript .js
+    AddType image/svg+xml .svg
+</IfModule>

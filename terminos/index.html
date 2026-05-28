@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Términos y Condiciones · DamIASolve</title>
+  <meta name="description" content="Términos y condiciones de uso y contratación de los servicios de DamIASolve – consultoría de automatización e inteligencia artificial para micropymes y autónomos." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://damiasolve.com/terminos" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+
+    /* ── TOKENS DE MARCA ── */
+    :root {
+      --blue-main:  #2671AC;
+      --blue-mid:   #2775B1;
+      --blue-dark:  #1B4E77;
+      --blue-vivid: #3095E3;
+      --black:      #060606;
+      --grey-dark:  #1a1a1a;
+      --grey-mid:   #4a4a4a;
+      --grey-light: #8a8a8a;
+      --grey-rule:  #dde3ea;
+      --bg-section: #f4f7fb;
+      --white:      #ffffff;
+      --radius:     8px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      color: var(--grey-dark);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    a { color: var(--blue-main); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--blue-dark);
+      padding: 56px 40px 48px;
+      text-align: center;
+    }
+
+    .logo {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -.01em;
+      color: var(--white);
+      margin-bottom: 28px;
+      text-decoration: none;
+    }
+
+    .logo span { color: #6cc6f5; }
+
+    header h1 {
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    header p.intro {
+      font-size: .95rem;
+      color: rgba(255,255,255,.72);
+      max-width: 540px;
+      margin: 0 auto 28px;
+      font-weight: 300;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .badge {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 4px;
+      padding: 5px 13px;
+      font-size: .75rem;
+      color: rgba(255,255,255,.8);
+      font-weight: 400;
+    }
+
+    .badge strong { color: #fff; font-weight: 500; }
+
+    /* ── NAV ── */
+    nav.toc {
+      background: var(--bg-section);
+      border-bottom: 2px solid var(--grey-rule);
+      padding: 16px 40px;
+    }
+
+    nav.toc ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      max-width: 860px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    nav.toc li:first-child {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--grey-light);
+      font-weight: 500;
+      margin-right: 4px;
+    }
+
+    nav.toc a {
+      font-size: .8rem;
+      color: var(--grey-mid);
+      border: 1px solid var(--grey-rule);
+      border-radius: 4px;
+      padding: 4px 12px;
+      background: var(--white);
+      display: block;
+      transition: color .15s, border-color .15s;
+    }
+
+    nav.toc a:hover {
+      color: var(--blue-main);
+      border-color: var(--blue-main);
+      text-decoration: none;
+    }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 40px 96px;
+    }
+
+    /* ── SECCIÓN ── */
+    .section {
+      padding-bottom: 48px;
+      margin-bottom: 48px;
+      border-bottom: 1px solid var(--grey-rule);
+    }
+
+    .section:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+    .section-label {
+      display: block;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--blue-main);
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 18px;
+      line-height: 1.3;
+    }
+
+    .section p {
+      font-size: .95rem;
+      color: var(--grey-mid);
+      margin-bottom: 14px;
+      line-height: 1.7;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* ── TARJETA INFO ── */
+    .info-card {
+      background: var(--bg-section);
+      border: 1px solid var(--grey-rule);
+      border-left: 4px solid var(--blue-main);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin: 20px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 32px;
+    }
+
+    .info-item .label {
+      display: block;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--grey-light);
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+
+    .info-item .value {
+      font-size: .93rem;
+      color: var(--black);
+      font-weight: 500;
+    }
+
+    .info-item.full { grid-column: 1 / -1; }
+
+    /* ── BLOQUE LISTA ── */
+    .list-block {
+      background: var(--bg-section);
+      border: 1px solid var(--grey-rule);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      margin: 18px 0;
+    }
+
+    .list-block h3 {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 14px;
+    }
+
+    .list-block .item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--grey-rule);
+    }
+
+    .list-block .item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--blue-main);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .list-block .item span {
+      font-size: .9rem;
+      color: var(--grey-mid);
+      line-height: 1.6;
+    }
+
+    /* ── GRID PRECIOS ── */
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .price-card {
+      background: var(--white);
+      border: 1px solid var(--grey-rule);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      transition: border-color .15s, box-shadow .15s;
+    }
+
+    .price-card:hover {
+      border-color: var(--blue-main);
+      box-shadow: 0 2px 12px rgba(38,113,172,.1);
+    }
+
+    .price-card .plan-name { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--blue-main); margin-bottom: 6px; display: block; }
+    .price-card .plan-price { font-size: 1.1rem; font-weight: 700; color: var(--black); }
+    .price-card .plan-desc { font-size: .78rem; color: var(--grey-light); line-height: 1.5; margin-top: 4px; }
+
+    /* ── AVISO ── */
+    .notice {
+      background: #fffbf0;
+      border: 1px solid #f0d080;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .notice .ni { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .notice p   { font-size: .87rem; color: #7a6020; margin: 0; line-height: 1.6; }
+
+    /* ── AVISO AZUL ── */
+    .notice-blue {
+      background: #f0f7ff;
+      border: 1px solid #b3d4ef;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .notice-blue .ni { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+    .notice-blue p   { font-size: .87rem; color: #1a4e7a; margin: 0; line-height: 1.6; }
+
+    /* ── CLÁUSULA ── */
+    .clause-block {
+      background: var(--bg-section);
+      border: 1px solid var(--grey-rule);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      margin: 18px 0;
+      font-size: .9rem;
+      color: var(--grey-mid);
+      line-height: 1.75;
+      font-style: italic;
+    }
+
+    .clause-block strong { font-style: normal; color: var(--black); }
+
+    /* ── BOTÓN ── */
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--blue-main);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-size: .88rem;
+      font-weight: 500;
+      transition: background .15s;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .btn-link:hover { background: var(--blue-dark); text-decoration: none; }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: transparent;
+      color: var(--blue-main);
+      border: 1px solid var(--blue-main);
+      padding: 9px 20px;
+      border-radius: var(--radius);
+      font-size: .88rem;
+      font-weight: 500;
+      transition: background .15s, color .15s;
+      text-decoration: none;
+      margin-top: 10px;
+      margin-left: 8px;
+    }
+
+    .btn-outline:hover { background: var(--blue-main); color: #fff; text-decoration: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--grey-dark);
+      padding: 40px 40px 32px;
+      text-align: center;
+    }
+
+    footer .f-logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #fff;
+      display: inline-block;
+      margin-bottom: 12px;
+      text-decoration: none;
+    }
+
+    footer .f-logo span { color: #6cc6f5; }
+
+    footer p {
+      font-size: .82rem;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 6px;
+    }
+
+    footer .f-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 18px;
+      margin-top: 18px;
+    }
+
+    footer .f-links a {
+      font-size: .8rem;
+      color: rgba(255,255,255,.55);
+      transition: color .15s;
+    }
+
+    footer .f-links a:hover { color: #fff; text-decoration: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      header { padding: 40px 20px 36px; }
+      nav.toc { padding: 14px 20px; }
+      main { padding: 40px 20px 72px; }
+      footer { padding: 32px 20px 24px; }
+      .info-card { grid-template-columns: 1fr; }
+      .info-item.full { grid-column: 1; }
+      .price-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 400px) {
+      .price-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ========== CABECERA ========== -->
+<header>
+  <a href="https://damiasolve.com" class="logo">Dam<span>IA</span>Solve</a>
+  <h1>Términos y Condiciones</h1>
+  <p class="intro">Condiciones generales de uso y contratación de los servicios de DamIASolve. Léelas antes de contratar o usar nuestros servicios.</p>
+  <div class="meta-row">
+    <span class="badge"><strong>Versión:</strong> 1.0</span>
+    <span class="badge"><strong>Última actualización:</strong> Mayo 2025</span>
+    <span class="badge"><strong>Aplicable desde:</strong> Mayo 2025</span>
+  </div>
+</header>
+
+<!-- ========== ÍNDICE ========== -->
+<nav class="toc" aria-label="Índice de contenidos">
+  <ul>
+    <li>Ir a:</li>
+    <li><a href="#titular">1. Titular</a></li>
+    <li><a href="#objeto">2. Objeto</a></li>
+    <li><a href="#servicios">3. Servicios</a></li>
+    <li><a href="#contratacion">4. Contratación</a></li>
+    <li><a href="#precios">5. Precios y pago</a></li>
+    <li><a href="#ejecucion">6. Ejecución</a></li>
+    <li><a href="#cancelacion">7. Cancelación</a></li>
+    <li><a href="#propiedad">8. Propiedad intelectual</a></li>
+    <li><a href="#responsabilidad">9. Responsabilidad</a></li>
+    <li><a href="#datos">10. Datos personales</a></li>
+    <li><a href="#ley">11. Ley aplicable</a></li>
+  </ul>
+</nav>
+
+<!-- ========== CONTENIDO ========== -->
+<main>
+
+  <!-- 1. TITULAR -->
+  <section class="section" id="titular">
+    <span class="section-label">01 · Titular del servicio</span>
+    <h2>Identificación del Prestador de Servicios</h2>
+    <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se informa que el titular del sitio web <strong>damiasolve.com</strong> y prestador de los servicios aquí descritos es:</p>
+
+    <div class="info-card">
+      <div class="info-item">
+        <span class="label">Nombre comercial</span>
+        <span class="value">DamIASolve</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Titular</span>
+        <span class="value">Damián Rosales Navas</span>
+      </div>
+      <div class="info-item">
+        <span class="label">Correo de contacto</span>
+        <span class="value"><a href="mailto:ia@damiasolve.com">ia@damiasolve.com</a></span>
+      </div>
+      <div class="info-item">
+        <span class="label">Teléfono</span>
+        <span class="value"><a href="tel:+34633044489">633 044 489</a></span>
+      </div>
+      <div class="info-item full">
+        <span class="label">Domicilio</span>
+        <span class="value">La Línea de la Concepción, Campo de Gibraltar, Cádiz, España</span>
+      </div>
+      <div class="info-item full">
+        <span class="label">Sitio web</span>
+        <span class="value"><a href="https://damiasolve.com">https://damiasolve.com</a></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. OBJETO -->
+  <section class="section" id="objeto">
+    <span class="section-label">02 · Objeto y ámbito</span>
+    <h2>Objeto y Ámbito de Aplicación</h2>
+    <p>Las presentes Condiciones Generales regulan el acceso, navegación y contratación de los servicios ofrecidos a través del sitio web <strong>damiasolve.com</strong> y de cualquier comunicación comercial o propuesta enviada por DamIASolve.</p>
+    <p>El acceso a este sitio web o la contratación de cualquier servicio implica la aceptación plena y sin reservas de estas Condiciones Generales, en la versión publicada en el momento del acceso o contratación. Se recomienda leerlas atentamente antes de proceder.</p>
+    <p>DamIASolve se reserva el derecho a modificar estas Condiciones en cualquier momento. La versión vigente estará siempre disponible en esta página. Para contrataciones ya firmadas, las condiciones aplicables serán las vigentes en el momento de la firma del presupuesto o acuerdo de servicio.</p>
+
+    <div class="notice-blue">
+      <span class="ni">ℹ️</span>
+      <p>Estas Condiciones se aplican a todos los servicios de DamIASolve, tanto los contratados directamente a través de la web como los acordados por correo electrónico, WhatsApp u otros medios de comunicación.</p>
+    </div>
+  </section>
+
+  <!-- 3. SERVICIOS -->
+  <section class="section" id="servicios">
+    <span class="section-label">03 · Servicios ofrecidos</span>
+    <h2>Descripción de los Servicios</h2>
+    <p>DamIASolve ofrece servicios profesionales de consultoría, automatización de procesos e inteligencia artificial para autónomos, micropymes y pequeños negocios. Los servicios disponibles incluyen, entre otros:</p>
+
+    <div class="list-block">
+      <h3>Catálogo de servicios principales</h3>
+      <div class="item"><div class="dot"></div><span><strong>Diagnóstico de procesos:</strong> análisis del funcionamiento del negocio para identificar tareas repetitivas, ineficiencias y oportunidades de mejora.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Automatización de procesos:</strong> diseño, configuración e implantación de flujos automáticos usando herramientas como Make.com, Power Automate, Google Workspace o Microsoft 365.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Automatización de WhatsApp Business:</strong> configuración de respuestas automáticas, flujos de atención al cliente y recordatorios.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Sistema de citas y recordatorios:</strong> implementación de sistemas automáticos de reservas, confirmaciones y seguimiento de clientes.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Asistentes de inteligencia artificial:</strong> creación de asistentes personalizados para atención al cliente, captación de leads o uso interno.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Automatización de correos electrónicos:</strong> clasificación, organización y gestión automática del correo.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Automatización de redes sociales:</strong> programación de publicaciones y gestión de calendarios de contenido.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Automatización de documentos e informes:</strong> generación automática de presupuestos, informes y documentos a partir de datos.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Formación práctica en IA y automatización:</strong> sesiones presenciales u online para equipos y negocios.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Consultoría y mejora de procesos:</strong> análisis y simplificación de la forma de trabajar antes de implantar tecnología.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Soporte y mantenimiento mensual:</strong> revisión, ajuste y mejora continuada de las automatizaciones implantadas.</span></div>
+    </div>
+
+    <p>La descripción detallada de cada servicio, incluida su funcionalidad, alcance y precio orientativo, se encuentra disponible en <a href="https://damiasolve.com/#servicios">damiasolve.com</a>. Las características exactas de cada proyecto se definirán en el presupuesto o propuesta correspondiente.</p>
+
+    <div class="notice">
+      <span class="ni">⚠️</span>
+      <p>DamIASolve no presta servicios de asesoría legal, contable, fiscal ni financiera. Los sistemas implantados no sustituyen en ningún caso a un asesor o gestor profesional en dichas materias.</p>
+    </div>
+  </section>
+
+  <!-- 4. CONTRATACIÓN -->
+  <section class="section" id="contratacion">
+    <span class="section-label">04 · Proceso de contratación</span>
+    <h2>Cómo se Contrata un Servicio</h2>
+    <p>El proceso de contratación de servicios de DamIASolve sigue los siguientes pasos:</p>
+
+    <div class="list-block">
+      <div class="item"><div class="dot"></div><span><strong>1. Contacto inicial:</strong> el cliente contacta a través del formulario web, correo electrónico, WhatsApp o llamada telefónica para describir sus necesidades.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>2. Análisis y diagnóstico:</strong> DamIASolve estudia el caso del cliente y, si procede, realiza un diagnóstico previo (que puede tener coste propio según tarifa).</span></div>
+      <div class="item"><div class="dot"></div><span><strong>3. Propuesta o presupuesto:</strong> DamIASolve envía una propuesta escrita con el alcance, entregables, plazo y precio del servicio.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>4. Aceptación:</strong> el cliente acepta la propuesta expresamente por escrito (correo electrónico, WhatsApp u otro medio escrito).</span></div>
+      <div class="item"><div class="dot"></div><span><strong>5. Pago inicial:</strong> salvo pacto en contrario, se realiza el pago de la parte de implementación antes del inicio de los trabajos.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>6. Ejecución y entrega:</strong> DamIASolve ejecuta el servicio en el plazo acordado y realiza la entrega y formación correspondiente.</span></div>
+    </div>
+
+    <p>El contrato se perfecciona en el momento en que el cliente acepta por escrito la propuesta enviada por DamIASolve. No existe contrato vinculante hasta dicha aceptación expresa.</p>
+  </section>
+
+  <!-- 5. PRECIOS Y PAGO -->
+  <section class="section" id="precios">
+    <span class="section-label">05 · Precios y formas de pago</span>
+    <h2>Precios, Facturación y Métodos de Pago</h2>
+    <p>Los precios de los servicios de DamIASolve son los indicados en la propuesta o presupuesto aceptado por el cliente. Los precios publicados en el sitio web son orientativos y pueden variar según el alcance real del proyecto.</p>
+
+    <div class="price-grid">
+      <div class="price-card">
+        <span class="plan-name">Plan Lite</span>
+        <span class="plan-price">250 €</span>
+        <p class="plan-desc">Pago único. Sin soporte mensual.</p>
+      </div>
+      <div class="price-card">
+        <span class="plan-name">Plan Básico</span>
+        <span class="plan-price">450 € + 89 €/mes</span>
+        <p class="plan-desc">Implementación + soporte mensual.</p>
+      </div>
+      <div class="price-card">
+        <span class="plan-name">Plan Profesional</span>
+        <span class="plan-price">590 € + 149 €/mes</span>
+        <p class="plan-desc">Implementación + soporte y optimización.</p>
+      </div>
+      <div class="price-card">
+        <span class="plan-name">Plan Premium</span>
+        <span class="plan-price">A medida + 349 €/mes</span>
+        <p class="plan-desc">Implementación personalizada + gestión total.</p>
+      </div>
+    </div>
+
+    <div class="list-block" style="margin-top:24px">
+      <h3>Condiciones económicas</h3>
+      <div class="item"><div class="dot"></div><span>Los precios se expresan <strong>sin IVA</strong>, salvo indicación expresa en contrario. El IVA aplicable será el vigente en el momento de la facturación.</span></div>
+      <div class="item"><div class="dot"></div><span>La mano de obra fuera de plan o no contemplada en el presupuesto se factura a <strong>35 €/hora</strong>.</span></div>
+      <div class="item"><div class="dot"></div><span>Los servicios de formación presencial u online se indican con precio <strong>más IVA</strong> en la propuesta correspondiente.</span></div>
+      <div class="item"><div class="dot"></div><span>El pago de la parte de implementación se realizará <strong>antes del inicio</strong> de los trabajos, salvo pacto expreso en contrario.</span></div>
+      <div class="item"><div class="dot"></div><span>Las cuotas mensuales de soporte o mantenimiento se facturan por adelantado al inicio de cada período.</span></div>
+    </div>
+
+    <div class="list-block">
+      <h3>Métodos de pago aceptados</h3>
+      <div class="item"><div class="dot"></div><span><strong>Transferencia bancaria SEPA</strong> — sin coste adicional.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Bizum</strong> — disponible para pagos puntuales.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>PayPal</strong> — puede incluir comisión del proveedor.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Stripe</strong> (tarjeta bancaria) — puede incluir comisión del proveedor.</span></div>
+    </div>
+
+    <div class="notice-blue">
+      <span class="ni">ℹ️</span>
+      <p>La activación del servicio se producirá en <strong>menos de 24 horas hábiles</strong> tras la confirmación del pago, salvo que en la propuesta se indique un plazo diferente.</p>
+    </div>
+  </section>
+
+  <!-- 6. EJECUCIÓN -->
+  <section class="section" id="ejecucion">
+    <span class="section-label">06 · Ejecución y entrega</span>
+    <h2>Ejecución del Servicio y Entregables</h2>
+    <p>DamIASolve se compromete a ejecutar los servicios contratados con la diligencia profesional adecuada, en el plazo y con el alcance definido en la propuesta aceptada.</p>
+
+    <div class="list-block">
+      <h3>Compromisos de DamIASolve</h3>
+      <div class="item"><div class="dot"></div><span>Responder a cualquier consulta o comunicación del cliente en <strong>menos de 24 horas hábiles</strong>.</span></div>
+      <div class="item"><div class="dot"></div><span>Entregar una propuesta de solución en un plazo máximo de <strong>48 horas</strong> desde el diagnóstico inicial.</span></div>
+      <div class="item"><div class="dot"></div><span>Utilizar herramientas estables, conocidas y mantenibles por el propio cliente siempre que sea posible.</span></div>
+      <div class="item"><div class="dot"></div><span>Proporcionar formación básica sobre el uso de las automatizaciones entregadas.</span></div>
+      <div class="item"><div class="dot"></div><span>Documentar el funcionamiento de los sistemas implantados de forma comprensible.</span></div>
+    </div>
+
+    <div class="list-block">
+      <h3>Obligaciones del cliente</h3>
+      <div class="item"><div class="dot"></div><span>Facilitar la información, accesos y materiales necesarios para la ejecución del servicio en el plazo acordado.</span></div>
+      <div class="item"><div class="dot"></div><span>Disponer de las licencias y cuentas de las herramientas necesarias, o informar a DamIASolve para gestionarlo conjuntamente.</span></div>
+      <div class="item"><div class="dot"></div><span>Revisar y validar los entregables en el plazo acordado. Transcurridos 7 días hábiles sin observaciones, se considerarán aceptados.</span></div>
+      <div class="item"><div class="dot"></div><span>Abonar las facturas en el plazo y forma acordados.</span></div>
+    </div>
+
+    <div class="notice">
+      <span class="ni">⚠️</span>
+      <p>Los plazos de entrega pueden verse afectados por retrasos en la aportación de información o accesos por parte del cliente. En ese caso, DamIASolve comunicará el nuevo plazo estimado.</p>
+    </div>
+  </section>
+
+  <!-- 7. CANCELACIÓN -->
+  <section class="section" id="cancelacion">
+    <span class="section-label">07 · Cancelación y permanencia</span>
+    <h2>Cancelación, Permanencia y Devoluciones</h2>
+    <p>DamIASolve ofrece sus servicios <strong>sin permanencia</strong>. El cliente puede modificar, pausar o cancelar el plan mensual en cualquier momento, con efectos al inicio del siguiente período de facturación.</p>
+
+    <div class="list-block">
+      <h3>Condiciones de cancelación</h3>
+      <div class="item"><div class="dot"></div><span><strong>Planes mensuales:</strong> se pueden cancelar en cualquier momento sin penalización. La cancelación se comunicará por escrito con un mínimo de 5 días hábiles de antelación al inicio del siguiente período.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Pagos únicos de implementación:</strong> una vez iniciados los trabajos, no procede devolución del importe abonado, salvo incumplimiento acreditado por parte de DamIASolve.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Cancelación antes del inicio:</strong> si el cliente cancela antes del inicio de los trabajos, DamIASolve devolverá el importe íntegro en un plazo máximo de 14 días.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Servicios de formación:</strong> cancelación gratuita con más de 48 horas de antelación. Con menos de 48 horas, se facturará el 50% del importe.</span></div>
+    </div>
+
+    <div class="list-block">
+      <h3>Continuidad de las automatizaciones tras la cancelación</h3>
+      <div class="item"><div class="dot"></div><span>Si las automatizaciones están configuradas en las <strong>cuentas propias del cliente</strong>, seguirán funcionando con normalidad aunque se cancele el soporte.</span></div>
+      <div class="item"><div class="dot"></div><span>Si las automatizaciones están configuradas en <strong>cuentas gestionadas por DamIASolve</strong>, el servicio podrá pausarse al cancelar el plan. La migración a cuentas del cliente puede presupuestarse aparte.</span></div>
+    </div>
+  </section>
+
+  <!-- 8. PROPIEDAD INTELECTUAL -->
+  <section class="section" id="propiedad">
+    <span class="section-label">08 · Propiedad intelectual</span>
+    <h2>Propiedad Intelectual e Industrial</h2>
+    <p>Todos los contenidos del sitio web <strong>damiasolve.com</strong> —incluyendo textos, imágenes, logotipos, diseño, código fuente y elementos gráficos— son propiedad de Damián Rosales Navas o de terceros que han autorizado su uso, y están protegidos por la legislación española e internacional sobre propiedad intelectual e industrial.</p>
+
+    <div class="list-block">
+      <h3>Sobre los entregables del servicio</h3>
+      <div class="item"><div class="dot"></div><span>Los flujos de automatización, scripts y configuraciones desarrollados específicamente para el cliente son <strong>propiedad del cliente</strong> una vez realizado el pago íntegro del servicio.</span></div>
+      <div class="item"><div class="dot"></div><span>Las plantillas, metodologías, documentación interna y formatos propios de DamIASolve utilizados durante la prestación del servicio son <strong>propiedad de DamIASolve</strong> y no podrán ser reproducidos ni comercializados por el cliente.</span></div>
+      <div class="item"><div class="dot"></div><span>El cliente podrá usar y modificar los entregables para sus propios fines internos, pero no podrá revenderlos ni cederlos a terceros sin autorización expresa de DamIASolve.</span></div>
+    </div>
+
+    <p>Queda expresamente prohibida la reproducción total o parcial de los contenidos del sitio web sin autorización escrita de DamIASolve.</p>
+  </section>
+
+  <!-- 9. RESPONSABILIDAD -->
+  <section class="section" id="responsabilidad">
+    <span class="section-label">09 · Responsabilidad y garantías</span>
+    <h2>Limitación de Responsabilidad</h2>
+    <p>DamIASolve pone el máximo cuidado y diligencia profesional en la prestación de sus servicios. No obstante, es necesario delimitar el alcance de la responsabilidad asumida:</p>
+
+    <div class="list-block">
+      <h3>DamIASolve no se responsabiliza de</h3>
+      <div class="item"><div class="dot"></div><span>Interrupciones, errores o cambios en las plataformas de terceros utilizadas (Make.com, Google, Microsoft, WhatsApp, etc.) que afecten al funcionamiento de las automatizaciones.</span></div>
+      <div class="item"><div class="dot"></div><span>Pérdidas de datos derivadas del uso incorrecto de los sistemas entregados por parte del cliente.</span></div>
+      <div class="item"><div class="dot"></div><span>Resultados económicos o comerciales concretos, ya que los servicios de automatización son herramientas de apoyo y no garantizan resultados específicos de negocio.</span></div>
+      <div class="item"><div class="dot"></div><span>El funcionamiento de los sistemas si el cliente modifica las configuraciones sin comunicarlo previamente a DamIASolve.</span></div>
+      <div class="item"><div class="dot"></div><span>Problemas derivados de que el cliente no disponga de las licencias necesarias de las herramientas de terceros.</span></div>
+    </div>
+
+    <div class="notice-blue">
+      <span class="ni">ℹ️</span>
+      <p>La responsabilidad máxima de DamIASolve ante el cliente queda limitada al importe total pagado por el servicio en cuestión durante los 3 meses anteriores al hecho causante del daño.</p>
+    </div>
+
+    <p>DamIASolve no garantiza la disponibilidad ininterrumpida del sitio web y se reserva el derecho a suspenderlo temporalmente por razones técnicas o de mantenimiento.</p>
+  </section>
+
+  <!-- 10. DATOS PERSONALES -->
+  <section class="section" id="datos">
+    <span class="section-label">10 · Protección de datos</span>
+    <h2>Tratamiento de Datos Personales</h2>
+    <p>En el marco de la prestación de servicios, DamIASolve podrá tratar datos personales del cliente y, en su caso, de los trabajadores o contactos del cliente necesarios para la ejecución del contrato.</p>
+
+    <div class="clause-block">
+      <strong>DamIASolve</strong> (Damián Rosales Navas, <a href="mailto:ia@damiasolve.com">ia@damiasolve.com</a>) trata los datos facilitados con la finalidad de gestionar la relación contractual, prestar los servicios contratados y, con consentimiento expreso, enviar comunicaciones sobre servicios. Los datos se conservarán durante la vigencia de la relación y los plazos legales posteriores. No se cederán a terceros salvo obligación legal o necesidad para la prestación del servicio. Puede ejercer sus derechos de acceso, rectificación, supresión, portabilidad, oposición y limitación escribiendo a <a href="mailto:ia@damiasolve.com">ia@damiasolve.com</a>. Si no obtiene satisfacción, puede reclamar ante la <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos (AEPD)</a>.
+    </div>
+
+    <p>Para información completa sobre el tratamiento de datos personales, consulte nuestra <a href="https://damiasolve.com/privacidad">Política de Privacidad</a>.</p>
+  </section>
+
+  <!-- 11. LEY APLICABLE -->
+  <section class="section" id="ley">
+    <span class="section-label">11 · Ley aplicable y jurisdicción</span>
+    <h2>Legislación Aplicable y Resolución de Conflictos</h2>
+    <p>Las presentes Condiciones Generales se rigen por la legislación española vigente, en particular por:</p>
+
+    <div class="list-block">
+      <div class="item"><div class="dot"></div><span><strong>Ley 34/2002</strong> (LSSI-CE) — Servicios de la Sociedad de la Información y Comercio Electrónico.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Ley Orgánica 3/2018</strong> (LOPDGDD) y <strong>Reglamento (UE) 2016/679</strong> (RGPD) — Protección de Datos Personales.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Real Decreto Legislativo 1/2007</strong> — Ley General para la Defensa de los Consumidores y Usuarios.</span></div>
+      <div class="item"><div class="dot"></div><span><strong>Código Civil y Código de Comercio</strong> español en lo relativo a obligaciones y contratos.</span></div>
+    </div>
+
+    <p>Para la resolución de cualquier controversia derivada de estas Condiciones o de la prestación de los servicios, las partes se someten, con renuncia expresa a cualquier otro fuero que pudiera corresponderles, a los <strong>Juzgados y Tribunales de La Línea de la Concepción (Cádiz)</strong>, salvo que la normativa de consumidores y usuarios establezca otro fuero imperativo.</p>
+
+    <div class="notice-blue">
+      <span class="ni">ℹ️</span>
+      <p>Antes de iniciar cualquier acción legal, DamIASolve y el cliente se comprometen a intentar resolver el conflicto de forma amistosa mediante comunicación directa en un plazo de <strong>30 días</strong> desde la notificación del problema.</p>
+    </div>
+
+    <p>Para cualquier consulta sobre estas Condiciones, puede contactar en <a href="mailto:ia@damiasolve.com">ia@damiasolve.com</a> o en el <a href="tel:+34633044489">633 044 489</a>.</p>
+
+    <div style="margin-top:24px">
+      <a href="https://damiasolve.com" class="btn-link">← Volver al inicio</a>
+      <a href="https://damiasolve.com/privacidad" class="btn-outline">Política de Privacidad</a>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========== PIE DE PÁGINA ========== -->
+<footer>
+  <a href="https://damiasolve.com" class="f-logo">Dam<span>IA</span>Solve</a>
+  <p>Automatización e inteligencia artificial para micropymes y autónomos</p>
+  <p>La Línea de la Concepción · Campo de Gibraltar · Cádiz · España</p>
+  <nav class="f-links" aria-label="Navegación legal footer">
+    <a href="https://damiasolve.com">Inicio</a>
+    <a href="https://damiasolve.com/privacidad">Política de privacidad</a>
+    <a href="https://damiasolve.com/terminos">Términos y condiciones</a>
+    <a href="mailto:ia@damiasolve.com">ia@damiasolve.com</a>
+    <a href="tel:+34633044489">633 044 489</a>
+  </nav>
+</footer>
+
+</body>
+</html>
