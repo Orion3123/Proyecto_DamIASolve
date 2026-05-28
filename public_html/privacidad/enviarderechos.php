@@ -3,7 +3,7 @@
  * DamIASolve – Procesador de solicitudes de derechos RGPD
  * ============================================================
  * Versión segura con:
- *   - Credenciales separadas en config.php (nunca hardcodeadas aquí)
+ *   - Credenciales en smtp_config.php FUERA de public_html
  *   - Verificación de origen (anti-CSRF básico por Referer)
  *   - Campo honeypot anti-bots
  *   - Rate limiting por IP (máximo 3 envíos por hora)
@@ -11,11 +11,22 @@
  * ============================================================
  */
 
-// ── Marca que permite que config.php sea incluido (protección de acceso directo)
+// ── Marca que permite que smtp_config.php sea incluido
 define('DESDE_ENVIAR', true);
 
-// ── Cargar configuración de credenciales desde archivo separado
-require_once __DIR__ . '/config.php';
+// ── Ruta al archivo de configuración (fuera de public_html)
+// __DIR__  →  /home/usuario/public_html/privacidad
+// dirname(__DIR__)      →  /home/usuario/public_html
+// dirname(__DIR__, 2)   →  /home/usuario          ← aquí va smtp_config.php
+$config_path = dirname(__DIR__, 2) . '/smtp_config.php';
+
+if (!file_exists($config_path)) {
+    // Fallback: si no existe fuera de public_html, busca en la misma carpeta
+    // (útil durante la migración)
+    $config_path = __DIR__ . '/config.php';
+}
+
+require_once $config_path;
 
 
 /* ══════════════════════════════════════════════════════
