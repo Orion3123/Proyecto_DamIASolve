@@ -1,233 +1,80 @@
 import React, { useState } from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import AnalizadorProcesos from "./analizador/AnalizadorProcesos";
+import B2BHunter from "./b2b/B2BHunter";
+
+/**
+ * Punto de entrada de las herramientas de DamIASolve.
+ *
+ * No usamos router para no añadir dependencias: con un estado basta para
+ * alternar entre la pantalla de inicio y cada herramienta.
+ */
+const HERRAMIENTAS = [
+  {
+    id: "hunter",
+    nombre: "B2B Hunter",
+    resumen: "Busca clientes potenciales por ciudad y sector, y genera la propuesta en un click.",
+    emoji: "🎯",
+    color: "from-blue-600 to-indigo-600",
+  },
+  {
+    id: "analizador",
+    nombre: "Analizador de Procesos",
+    resumen: "Diagnóstico rápido de ineficiencias y cuellos de botella en un negocio.",
+    emoji: "🔎",
+    color: "from-slate-600 to-slate-700",
+  },
+];
 
 export default function App() {
-  const [screen, setScreen] = useState("welcome");
-  const [answers, setAnswers] = useState([]);
-  const questions = [
-    {
-      text: "¿Cómo gestionas actualmente los pedidos o citas?",
-      type: "multiple",
-      options: [
-        "Manual en papel",
-        "WhatsApp/Chat",
-        "Software dedicado",
-        "No gestiono",
-      ],
-    },
-    {
-      text: "¿Tienes demoras frecuentes en la atención al cliente?",
-      type: "yesno",
-    },
-    { text: "¿Controlas tu inventario de forma digital?", type: "yesno" },
-    {
-      text: "¿Tienes tareas repetitivas que consumen mucho tiempo?",
-      type: "yesno",
-    },
-    {
-      text: "¿Cómo comunicas cambios o instrucciones a tu equipo?",
-      type: "multiple",
-      options: [
-        "Verbal",
-        "Documentos impresos",
-        "Emails/Chat",
-        "Sin protocolo",
-      ],
-    },
-  ];
+  const [herramienta, setHerramienta] = useState(null);
 
-  const suggestions = [
-    {
-      title: "Automatizar registro de pedidos",
-      description:
-        "Crear un flujo en Make.com que capture órdenes y las almacene automáticamente en tu base de datos.",
-      link: "https://www.make.com/es/scenario/registro-pedidos",
-    },
-    {
-      title: "Notificaciones a equipo",
-      description:
-        "Configurar alerta en Make.com para que tu equipo reciba un resumen diario de tareas pendientes.",
-      link: "https://www.make.com/es/scenario/notificaciones-equipo",
-    },
-    {
-      title: "Actualización de inventario",
-      description:
-        "Integrar tu sistema de inventario con hojas de cálculo mediante Make.com para sincronizar niveles automáticamente.",
-      link: "https://www.make.com/es/scenario/inventario-sync",
-    },
-  ];
+  const volver = () => setHerramienta(null);
 
-  const [qIndex, setQIndex] = useState(0);
-
-  function handleAnswer(answer) {
-    setAnswers((prev) => [...prev, answer]);
-    if (qIndex < questions.length - 1) {
-      setQIndex(qIndex + 1);
-    } else {
-      setScreen("results");
-    }
+  if (herramienta === "analizador") {
+    return <AnalizadorProcesos onVolver={volver} />;
   }
 
-  // Prepare data for chart
-  const yesCount = answers.filter((a) => a === "Sí").length;
-  const noCount = answers.filter((a) => a === "No").length;
-  const chartData = [
-    { name: "Sí", value: yesCount },
-    { name: "No", value: noCount },
-  ];
+  if (herramienta === "hunter") {
+    return <B2BHunter onVolver={volver} />;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg overflow-hidden">
-        {/* Header */}
-        <div className="flex items-center justify-center bg-blue-600 p-4">
-          {/* Ajuste para ruta correcta del logo en public */}
+      <div className="w-full max-w-2xl">
+        <div className="flex items-center justify-center mb-8">
           <img
             src="/Logo_DamIASolve111.png"
             alt="DamIASolve"
-            className="h-10 mr-2"
+            className="h-12 mr-3"
           />
-          <h1 className="text-white text-xl font-bold">DamIASolve</h1>
+          <div>
+            <h1 className="text-2xl font-bold text-gray-900">DamIASolve</h1>
+            <p className="text-gray-500 text-sm">
+              Herramientas para micropymes y negocios locales
+            </p>
+          </div>
         </div>
 
-        {/* Screens */}
-        {screen === "welcome" && (
-          <div className="p-6 text-center">
-            <h2 className="text-2xl font-semibold mb-4">
-              Analizador de Procesos
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Descubre ineficiencias operativas y cuellos de botella en tu
-              negocio.
-            </p>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {HERRAMIENTAS.map((h) => (
             <button
-              className="w-full py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700"
-              onClick={() => setScreen("quiz")}
+              key={h.id}
+              type="button"
+              onClick={() => setHerramienta(h.id)}
+              className="text-left bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
-              Comenzar diagnóstico
+              <div className={`bg-gradient-to-r ${h.color} p-5`}>
+                <span className="text-3xl" aria-hidden="true">
+                  {h.emoji}
+                </span>
+                <h2 className="text-white text-lg font-semibold mt-2">
+                  {h.nombre}
+                </h2>
+              </div>
+              <p className="p-5 text-gray-600 text-sm">{h.resumen}</p>
             </button>
-          </div>
-        )}
-
-        {screen === "quiz" && (
-          <div className="p-6">
-            <p className="text-gray-800 font-medium mb-3">
-              {`Pregunta ${qIndex + 1} de ${questions.length}`}
-            </p>
-            <h3 className="text-lg font-semibold mb-4">
-              {questions[qIndex].text}
-            </h3>
-
-            <div className="space-y-3">
-              {questions[qIndex].type === "yesno"
-                ? ["Sí", "No"].map((opt) => (
-                    <button
-                      key={opt}
-                      className="w-full py-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
-                      onClick={() => handleAnswer(opt)}
-                    >
-                      {opt}
-                    </button>
-                  ))
-                : questions[qIndex].options.map((opt) => (
-                    <button
-                      key={opt}
-                      className="w-full py-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
-                      onClick={() => handleAnswer(opt)}
-                    >
-                      {opt}
-                    </button>
-                  ))}
-            </div>
-          </div>
-        )}
-
-        {screen === "results" && (
-          <div className="p-6">
-            <h2 className="text-2xl font-semibold mb-4">
-              Resultados del Diagnóstico
-            </h2>
-            <ul className="space-y-4 mb-6">
-              <li className="flex items-start">
-                <div className="h-3 w-3 bg-orange-400 rounded-full mt-2 mr-3"></div>
-                <p>
-                  <strong>Procesos manuales:</strong> Muchas tareas se realizan
-                  en papel o chat, reduciendo eficiencia.
-                </p>
-              </li>
-              <li className="flex items-start">
-                <div className="h-3 w-3 bg-yellow-400 rounded-full mt-2 mr-3"></div>
-                <p>
-                  <strong>Cuellos de botella:</strong> Identificados en atención
-                  al cliente y coordinación interna.
-                </p>
-              </li>
-              <li className="flex items-start">
-                <div className="h-3 w-3 bg-red-400 rounded-full mt-2 mr-3"></div>
-                <p>
-                  <strong>Tareas repetitivas:</strong> Varias actividades
-                  podrían automatizarse con low-code.
-                </p>
-              </li>
-            </ul>
-
-            {/* Chart Visualization */}
-            <div className="w-full h-40 mb-6">
-              <ResponsiveContainer>
-                <BarChart
-                  data={chartData}
-                  margin={{ top: 5, right: 20, left: 10, bottom: 5 }}
-                >
-                  <XAxis dataKey="name" />
-                  <YAxis />
-                  <Tooltip />
-                  <Bar dataKey="value" fill="#3b82f6" />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-
-            {/* Recommendations and Make.com links */}
-            <h3 className="text-xl font-semibold mb-3">
-              Sugerencias de Automatización
-            </h3>
-            <div className="space-y-4 mb-6">
-              {suggestions.map((sug) => (
-                <div key={sug.title} className="p-4 border rounded-lg">
-                  <h4 className="font-semibold mb-1">{sug.title}</h4>
-                  <p className="text-gray-600 text-sm mb-2">
-                    {sug.description}
-                  </p>
-                  <a
-                    href={sug.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
-                  >
-                    Ver escenario en Make.com
-                  </a>
-                </div>
-              ))}
-            </div>
-
-            <button
-              className="w-full py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700"
-              onClick={() => {
-                setAnswers([]);
-                setQIndex(0);
-                setScreen("welcome");
-              }}
-            >
-              Reiniciar diagnóstico
-            </button>
-          </div>
-        )}
+          ))}
+        </div>
       </div>
     </div>
   );
