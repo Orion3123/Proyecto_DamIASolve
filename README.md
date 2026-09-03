@@ -28,12 +28,32 @@ No hace falta ninguna clave ni servidor: todo funciona en el navegador.
    para firmar las propuestas). La oferta elegida decide a quién se prioriza:
    la misma lista de negocios se ordena distinto según lo que ofrezcas.
 2. **Buscar.** Escribe una o varias ciudades separadas por comas y marca los
-   sectores. Si solo quieres ver cómo funciona, pulsa **«Probar con datos de
+   sectores. Si tu nicho no está en la lista, usa el campo de búsqueda libre
+   (ver abajo). Si solo quieres ver cómo funciona, pulsa **«Probar con datos de
    ejemplo»**: carga negocios ficticios sin tocar la red.
 3. **Resultados.** Cada negocio trae su puntuación, las señales detectadas y
    los datos de contacto disponibles. «¿Por qué esta nota?» abre el desglose.
 4. **Mis leads.** Los que guardes quedan aquí con su estado (nuevo, contactado,
    interesado, cliente, descartado), notas y exportación a CSV.
+
+### Buscar un nicho que no está en la lista
+
+El catálogo trae ~22 tipos de negocio, pero OpenStreetMap tiene miles de
+categorías. El campo libre admite dos formas, y **la diferencia importa**:
+
+| Escribes | Busca por | Alcance |
+|---|---|---|
+| `shop=pizza` | **etiqueta** de OpenStreetMap | Completo: encuentra todas las pizzerías, se llamen como se llamen |
+| `pizzería` | **nombre** del negocio | Parcial: encuentra «Pizzería Roma», pero **no** «Da Vincenzo» |
+
+Es decir: el modo nombre funciona bien en España, donde muchos negocios llevan
+el tipo en el rótulo, pero **se le escapan los que no lo llevan**. Si quieres la
+lista completa de un sector, busca su etiqueta en el
+[wiki de OpenStreetMap](https://wiki.openstreetmap.org/wiki/ES:Map_features) y
+usa la forma `clave=valor`. La app te dice en cada momento en qué modo estás.
+
+Puedes combinar catálogo y búsqueda libre en la misma pasada: marcar
+«Peluquerías» y escribir `shop=pizza` lanza las dos consultas.
 
 ### Lo más importante que debes saber
 
@@ -164,5 +184,9 @@ texto es editable antes de copiarlo, que es donde de verdad se personaliza.
   de cara al cliente, conviene compilar Tailwind en el proyecto.
 - Los leads viven en un solo navegador. Si necesitas varios dispositivos, el
   siguiente paso natural es mover `almacen.js` a Supabase sin tocar el resto.
-- La búsqueda por sectores usa un catálogo cerrado de ~22 tipos de negocio. Se
-  amplía añadiendo entradas en `sectores.js`.
+- El catálogo tiene ~22 tipos de negocio. Para el resto está la búsqueda libre;
+  si algún nicho se te repite mucho, merece la pena añadirlo como entrada fija
+  en `sectores.js`.
+- La búsqueda libre por nombre es más lenta (cruza el nombre con siete claves de
+  OSM, con timeout de 60 s) y puede agotar el tiempo en ciudades grandes. Si te
+  pasa, usa la forma `clave=valor`.

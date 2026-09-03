@@ -225,10 +225,61 @@ export function sectorPorId(id) {
 
 /**
  * Nombre legible de un sector a partir de su id.
- * Si el id no está en el catálogo (búsqueda libre), se devuelve tal cual.
+ * Los sectores de búsqueda libre llevan el prefijo "libre:" y guardan el texto
+ * que escribió el usuario, así que se muestra ese texto sin el prefijo.
  */
 export function nombreSector(id) {
+  if (typeof id === "string" && id.startsWith(PREFIJO_LIBRE)) {
+    return id.slice(PREFIJO_LIBRE.length);
+  }
   return sectorPorId(id)?.nombre ?? id ?? "Negocio";
+}
+
+const PREFIJO_LIBRE = "libre:";
+
+/** Detecta la forma `clave=valor` de una etiqueta de OpenStreetMap. */
+const ETIQUETA_SUELTA = /^\s*([a-z_]{2,30})\s*=\s*([A-Za-z0-9_:.-]{1,60})\s*$/;
+
+/**
+ * Crea un "sector" a medida a partir de texto libre, para los nichos que no
+ * están en el catálogo.
+ *
+ * Admite dos formas, y la diferencia importa mucho:
+ *
+ *   · `shop=pizza` (clave=valor) → filtra por ETIQUETA de OpenStreetMap. Es lo
+ *     potente: da acceso a los miles de categorías que OSM tiene y este
+ *     catálogo no. Requiere conocer la etiqueta.
+ *   · `pizzería` (texto suelto) → busca en el NOMBRE del negocio. Útil en
+ *     España, donde muchos se llaman "Peluquería María" o "Clínica Dental X",
+ *     pero se le escapan los que no llevan el tipo en el nombre: una pizzería
+ *     llamada "Da Vincenzo" no aparecerá. La interfaz lo advierte.
+ */
+export function crearSectorLibre(texto) {
+  const limpio = (texto ?? "").trim();
+  if (!limpio) return null;
+
+  const etiqueta = limpio.match(ETIQUETA_SUELTA);
+  if (etiqueta) {
+    const [, clave, valor] = etiqueta;
+    return {
+      id: `${PREFIJO_LIBRE}${clave}=${valor}`,
+      nombre: `${clave}=${valor}`,
+      esLibre: true,
+      modo: "etiqueta",
+      etiquetas: [[clave, valor]],
+      consultaGoogle: valor.replace(/_/g, " "),
+    };
+  }
+
+  return {
+    id: `${PREFIJO_LIBRE}${limpio}`,
+    nombre: limpio,
+    esLibre: true,
+    modo: "nombre",
+    texto: limpio,
+    etiquetas: [],
+    consultaGoogle: limpio,
+  };
 }
 
 /**

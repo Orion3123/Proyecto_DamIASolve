@@ -116,6 +116,40 @@ function deduplicar(leads) {
   return Array.from(porClave.values());
 }
 
+/**
+ * Claves de OpenStreetMap que identifican "algo que es un negocio".
+ *
+ * La búsqueda libre por nombre necesita este filtro: sin él, buscar "central"
+ * devolvería calles, edificios y paradas de autobús. Solo interesan elementos
+ * que además tengan alguna de estas claves.
+ */
+const CLAVES_NEGOCIO = [
+  "shop",
+  "amenity",
+  "office",
+  "craft",
+  "leisure",
+  "tourism",
+  "healthcare",
+];
+
+/**
+ * Prepara texto del usuario para incrustarlo como expresión regular dentro de
+ * una cadena de Overpass QL.
+ *
+ * Doble escapado a propósito: primero se neutralizan los metacaracteres de
+ * expresión regular (para que "Café (centro)" se busque literalmente) y después
+ * las barras invertidas resultantes se duplican, porque el valor viaja dentro
+ * de una cadena entrecomillada de Overpass QL. Sin esto, un paréntesis en la
+ * búsqueda rompe la consulta entera.
+ */
+function escaparRegex(texto) {
+  return texto
+    .replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"');
+}
+
 /** Construye la consulta Overpass QL para un sector dentro de un ámbito. */
 export function construirConsulta(ambito, sector, limite) {
   const filtroZona =
@@ -126,12 +160,20 @@ export function construirConsulta(ambito, sector, limite) {
   const cabeceraZona =
     ambito.tipo === "area" ? `area(${ambito.areaId})->.zona;` : "";
 
-  const lineas = sector.etiquetas
-    .map(([clave, valor]) => `  nwr["${clave}"="${valor}"]${filtroZona};`)
-    .join("\n");
+  // Búsqueda libre por nombre: se cruza el nombre con cada clave de negocio.
+  // Es más cara que filtrar por etiqueta, así que se le da más tiempo.
+  const porNombre = sector.esLibre && sector.modo === "nombre";
+  const lineas = porNombre
+    ? CLAVES_NEGOCIO.map(
+        (clave) =>
+          `  nwr["name"~"${escaparRegex(sector.texto)}",i]["${clave}"]${filtroZona};`
+      ).join("\n")
+    : sector.etiquetas
+        .map(([clave, valor]) => `  nwr["${clave}"="${valor}"]${filtroZona};`)
+        .join("\n");
 
   return [
-    "[out:json][timeout:25];",
+    `[out:json][timeout:${porNombre ? 60 : 25}];`,
     cabeceraZona,
     "(",
     lineas,
@@ -202,11 +244,14 @@ async function ejecutarConsulta(consulta, alProgresar) {
  * @param {Function} [alProgresar] callback de texto de progreso
  * @returns {Promise<Array>} leads normalizados y deduplicados
  */
-export async function buscarNegocios(ambito, sectorId, limite = 150, alProgresar) {
-  const sector = sectorPorId(sectorId);
+export async function buscarNegocios(ambito, sectorOId, limite = 150, alProgresar) {
+  // Admite un id del catálogo o un sector ya construido (búsqueda libre).
+  const sector =
+    typeof sectorOId === "string" ? sectorPorId(sectorOId) : sectorOId;
   if (!sector) {
-    throw new Error(`Sector desconocido: ${sectorId}`);
+    throw new Error(`Sector desconocido: ${sectorOId}`);
   }
+  const sectorId = sector.id;
 
   const consulta = construirConsulta(ambito, sector, limite);
   const datos = await ejecutarConsulta(consulta, alProgresar);

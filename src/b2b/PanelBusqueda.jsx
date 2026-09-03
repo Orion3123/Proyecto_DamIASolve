@@ -1,5 +1,5 @@
 import React from "react";
-import { SECTORES } from "./sectores";
+import { SECTORES, crearSectorLibre } from "./sectores";
 
 /**
  * Formulario de búsqueda.
@@ -27,10 +27,13 @@ export default function PanelBusqueda({
   const {
     ciudades,
     sectores: sectoresElegidos,
+    textoLibre = "",
     soloConTelefono,
     soloSinWeb,
     limite,
   } = criterios;
+
+  const sectorLibre = crearSectorLibre(textoLibre);
 
   const cambiar = (campo, valor) => onCambiar({ ...criterios, [campo]: valor });
 
@@ -48,21 +51,28 @@ export default function PanelBusqueda({
     .map((c) => c.trim())
     .filter(Boolean);
 
+  // Los sectores del catálogo y el libre se combinan: se puede buscar
+  // "peluquerías" y "shop=pizza" en la misma pasada.
+  const sectoresABuscar = [
+    ...sectoresElegidos,
+    ...(sectorLibre ? [sectorLibre] : []),
+  ];
+
   const puedeBuscar =
-    listaCiudades.length > 0 && sectoresElegidos.length > 0 && !buscando;
+    listaCiudades.length > 0 && sectoresABuscar.length > 0 && !buscando;
 
   const enviar = (e) => {
     e.preventDefault();
     if (!puedeBuscar) return;
     onBuscar({
       ciudades: listaCiudades,
-      sectores: sectoresElegidos,
+      sectores: sectoresABuscar,
       filtros: { soloConTelefono, soloSinWeb },
       limite,
     });
   };
 
-  const consultas = listaCiudades.length * sectoresElegidos.length;
+  const consultas = listaCiudades.length * sectoresABuscar.length;
 
   return (
     <form onSubmit={enviar} className="space-y-5">
@@ -110,6 +120,59 @@ export default function PanelBusqueda({
             );
           })}
         </div>
+      </div>
+
+      <div>
+        <label
+          htmlFor="textoLibre"
+          className="block text-sm font-medium text-gray-700 mb-1"
+        >
+          ¿No está en la lista? Búscalo tú
+        </label>
+        <input
+          id="textoLibre"
+          type="text"
+          value={textoLibre}
+          onChange={(e) => cambiar("textoLibre", e.target.value)}
+          placeholder="pizzería   ·   shop=pizza"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+
+        {sectorLibre?.modo === "etiqueta" && (
+          <p className="text-xs text-green-800 bg-green-50 border border-green-200 rounded-lg p-2 mt-2">
+            Buscarás por la etiqueta <strong>{sectorLibre.nombre}</strong> de
+            OpenStreetMap. Es la forma precisa: encuentra todos los negocios de
+            esa categoría, se llamen como se llamen.
+          </p>
+        )}
+
+        {sectorLibre?.modo === "nombre" && (
+          <p className="text-xs text-amber-900 bg-amber-50 border border-amber-200 rounded-lg p-2 mt-2">
+            Buscarás «{sectorLibre.nombre}» <strong>en el nombre</strong> del
+            negocio. Encontrarás los que se llamen así («Pizzería Roma»), pero
+            se te escaparán los que no lleven la palabra en el nombre («Da
+            Vincenzo»). Para una búsqueda completa usa la etiqueta de
+            OpenStreetMap, por ejemplo <code>shop=pizza</code> o{" "}
+            <code>amenity=fast_food</code>; puedes consultarlas en{" "}
+            <a
+              href="https://wiki.openstreetmap.org/wiki/ES:Map_features"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              el wiki de OSM
+            </a>
+            .
+          </p>
+        )}
+
+        {!sectorLibre && (
+          <p className="text-xs text-gray-500 mt-1">
+            Escribe una palabra para buscarla en el nombre del negocio, o una
+            etiqueta de OpenStreetMap tipo <code>shop=pizza</code> para buscar
+            por categoría exacta.
+          </p>
+        )}
       </div>
 
       <div className="flex flex-wrap gap-4 items-center">

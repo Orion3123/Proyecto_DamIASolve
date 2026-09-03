@@ -4,6 +4,7 @@ import FichaLead from "./FichaLead";
 import ModalPropuesta from "./ModalPropuesta";
 import { OFERTAS, ofertaPorId, ESTILO_FIABILIDAD } from "./ofertas";
 import { puntuar } from "./senales";
+import { nombreSector } from "./sectores";
 import { geocodificarCiudad } from "./geocodificar";
 import { buscarNegocios } from "./osm";
 import { buscarEnGoogle } from "./googlePlaces";
@@ -75,6 +76,7 @@ export default function B2BHunter({ onVolver }) {
   const [criterios, setCriterios] = useState({
     ciudades: "",
     sectores: [],
+    textoLibre: "",
     soloConTelefono: false,
     soloSinWeb: false,
     limite: 100,
@@ -149,26 +151,31 @@ export default function B2BHunter({ onVolver }) {
             await esperar(1200);
           }
 
-          for (const sectorId of sectores) {
+          for (const sector of sectores) {
             if (cancelar.current) break;
 
-            setProgreso(`Buscando en ${ambito.nombre}…`);
+            // `sector` puede ser un id del catálogo o un sector de búsqueda
+            // libre ya construido; para los mensajes hace falta su nombre.
+            const etiquetaSector =
+              typeof sector === "string" ? nombreSector(sector) : sector.nombre;
+
+            setProgreso(`Buscando ${etiquetaSector} en ${ambito.nombre}…`);
             try {
               const encontradosAqui =
                 ajustes.motor === "google"
                   ? await buscarEnGoogle(
                       ambito,
-                      sectorId,
+                      sector,
                       ajustes.claveGoogle,
                       limite
                     )
-                  : await buscarNegocios(ambito, sectorId, limite, setProgreso);
+                  : await buscarNegocios(ambito, sector, limite, setProgreso);
 
               encontradosAqui.forEach((lead) => {
                 if (!encontrados.has(lead.id)) encontrados.set(lead.id, lead);
               });
             } catch (e) {
-              fallos.push(`${ciudad} / ${sectorId}: ${e.message}`);
+              fallos.push(`${ciudad} / ${etiquetaSector}: ${e.message}`);
             }
 
             // Pausa de cortesía con los servidores gratuitos.

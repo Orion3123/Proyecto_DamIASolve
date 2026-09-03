@@ -88,17 +88,20 @@ function normalizar(sitio, sectorId, ciudad) {
  * @param {number} limite máximo de resultados (Google tope 20)
  * @returns {Promise<Array>} leads normalizados, todos no persistibles
  */
-export async function buscarEnGoogle(ambito, sectorId, claveApi, limite = 20) {
+export async function buscarEnGoogle(ambito, sectorOId, claveApi, limite = 20) {
   if (!claveApi) {
     throw new Error(
       "Falta la clave de Google. Añádela en Ajustes o vuelve al motor de OpenStreetMap."
     );
   }
 
-  const sector = sectorPorId(sectorId);
+  // Admite un id del catálogo o un sector ya construido (búsqueda libre).
+  const sector =
+    typeof sectorOId === "string" ? sectorPorId(sectorOId) : sectorOId;
   if (!sector) {
-    throw new Error(`Sector desconocido: ${sectorId}`);
+    throw new Error(`Sector desconocido: ${sectorOId}`);
   }
+  const sectorId = sector.id;
 
   const cuerpo = {
     textQuery: `${sector.consultaGoogle} en ${ambito.nombre}`,
