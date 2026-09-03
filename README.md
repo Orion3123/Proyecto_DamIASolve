@@ -130,6 +130,61 @@ En el `localStorage` de tu navegador, así que:
 
 ---
 
+## Publicar la app (Netlify)
+
+La app es 100 % estática y **no contiene ningún secreto**: no hay servidor ni
+base de datos, y tus leads, tu perfil y (si la usas) tu clave de Google viven
+solo en el `localStorage` del navegador. Publicarla no expone nada tuyo.
+
+### Por qué Netlify y no Vercel
+
+El plan gratuito de Vercel («Hobby») está pensado para uso **no comercial**, y
+esta herramienta sirve para captar clientes, o sea, uso comercial. El plan
+gratuito de Netlify sí admite uso comercial. Comprueba las condiciones vigentes
+de ambos antes de decidir, pero por eso el repositorio viene configurado para
+Netlify.
+
+### Pasos (unos cinco minutos, una sola vez)
+
+1. Entra en [netlify.com](https://www.netlify.com) y crea una cuenta.
+2. **Add new site → Import an existing project → GitHub**, y autoriza el acceso.
+3. Elige el repositorio `Proyecto_DamIASolve`.
+4. En la rama a desplegar, selecciona la que quieras publicar (`main` cuando
+   hayas fusionado, o `claude/b2b-hunter-app-lux5ra` para probar antes).
+5. **No cambies nada más**: el comando de build y la carpeta de publicación los
+   toma de `netlify.toml`. Pulsa **Deploy**.
+6. Te dará una URL tipo `algo-aleatorio.netlify.app`. En **Site configuration →
+   Change site name** puedes ponerle algo como `b2bhunter-damiasolve`.
+
+A partir de ahí, cada `git push` a esa rama vuelve a publicar solo.
+
+Desde el móvil, abre la URL y usa «Añadir a pantalla de inicio»: queda como una
+app más y la tienes a mano cuando estés fuera.
+
+### Qué hace `netlify.toml`
+
+- **Fija Node a la versión 22**, con la que está verificada la compilación. Sin
+  fijarla, el día que Netlify cambie su versión por defecto el despliegue puede
+  romperse sin que hayas tocado el código.
+- **Redirige cualquier ruta a `index.html`**, para que nadie se encuentre un 404
+  al refrescar o al abrir un enlace.
+- **Cachea para siempre los ficheros con hash y nunca `index.html`**, que es lo
+  que evita que el navegador se quede pegado a una versión antigua.
+- **Cabeceras de seguridad básicas.** Ojo con `Referrer-Policy`: NO debe ponerse
+  en `no-referrer`. Nominatim identifica a las aplicaciones de navegador por la
+  cabecera `Referer`, y sin ella pasaríamos por tráfico anónimo y podrían
+  bloquearnos.
+
+### Aviso importante sobre publicar
+
+La URL será **pública**: cualquiera que la tenga puede usar la herramienta. No
+hay datos tuyos dentro, así que el riesgo es bajo, pero ten dos cosas en cuenta:
+
+- Si te preocupa que la use alguien más, Netlify permite proteger el sitio con
+  contraseña (esa opción es de pago) o restringir el acceso.
+- Cada visitante consume cuota de los servidores gratuitos de OpenStreetMap. Un
+  uso normal no es problema; difundir la URL masivamente sí lo sería.
+
 ## Estructura del código
 
 ```

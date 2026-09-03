@@ -1,0 +1,49 @@
+# Configuración de despliegue en Netlify.
+#
+# La app es 100 % estática: no hay servidor, ni base de datos, ni secretos.
+# Todo (leads, perfil, clave de Google si la usas) vive en el localStorage del
+# navegador de cada persona. Publicarla no expone ningún dato tuyo.
+
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  # Fijada a la versión con la que se ha verificado la compilación.
+  # react-scripts 5 es sensible a la versión de Node; sin fijarla, el día que
+  # Netlify cambie su versión por defecto el despliegue puede romperse sin que
+  # hayas tocado nada.
+  NODE_VERSION = "22"
+
+# La app no usa router: todo ocurre en una sola página. Esta regla evita que
+# alguien que teclee una ruta cualquiera se encuentre un 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Los ficheros de build llevan un hash en el nombre, así que se pueden cachear
+# para siempre sin miedo a servir una versión vieja.
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# index.html NO se cachea: es quien apunta a los ficheros con hash, y si se
+# queda pegado el navegador seguiría cargando la versión anterior de la app.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    # OJO: no poner "no-referrer" aquí. La política de uso de Nominatim
+    # identifica a las aplicaciones de navegador por la cabecera Referer, que es
+    # lo único que pueden enviar (no permiten fijar User-Agent desde el
+    # navegador). Con "no-referrer" quedaríamos como tráfico anónimo y podrían
+    # bloquearnos. Este valor envía el origen sin filtrar la ruta concreta.
+    Referrer-Policy = "strict-origin-when-cross-origin"
